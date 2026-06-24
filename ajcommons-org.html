@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ── PRIMARY META ─────────────────────────────── -->
+<title>AJ Commons — Open Source FHIR Health Infrastructure Foundation</title>
+<meta name="description" content="Open-source FHIR health data infrastructure for hospitals and national health systems — free to deploy, Apache 2.0. HL7 FHIR R4/R5, SMART, IHE. DPG candidate.">
+<meta name="keywords" content="FHIR open source, health information exchange, HIE open source, HL7 FHIR infrastructure, SMART on FHIR, digital public good health, ABDM FHIR, national health platform open source, AJBridge, AJMPI, master patient index open source, health interoperability LMIC">
+<meta name="author" content="Dr. Akriti Jamwal, Akhester Technologies LLP">
+<link rel="canonical" href="https://ajcommons.org/">
+
+<!-- ── OPEN GRAPH ────────────────────────────────── -->
+<meta property="og:type"        content="website">
+<meta property="og:site_name"   content="AJ Commons">
+<meta property="og:url"         content="https://ajcommons.org/">
+<meta property="og:title"       content="AJ Commons — Open Source FHIR Health Infrastructure">
+<meta property="og:description" content="Free, open-source FHIR health data infrastructure for hospitals and national health systems. Nine deployable components — HL7v2 gateway, master patient index, consent manager, facility registry, drug safety. Apache 2.0. DPG candidate.">
+<meta property="og:image"       content="https://ajcommons.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale"      content="en_IN">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- ── TWITTER / X CARD ─────────────────────────── -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:site"        content="@ajcommons_org">
+<meta name="twitter:creator"     content="@ajcommons_org">
+<meta name="twitter:title"       content="AJ Commons — Open Source FHIR Health Infrastructure">
+<meta name="twitter:description" content="Free FHIR health data infrastructure for national health systems. Apache 2.0. Nine open-source components — gateway, MPI, consent, facility registry, drug safety. DPG candidate.">
+<meta name="twitter:image"       content="https://ajcommons.org/og-image.png">
+
+<!-- ── ADDITIONAL SEO SIGNALS ───────────────────── -->
+<meta name="robots"   content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#1B5E45">
+<link rel="sitemap" type="application/xml" href="https://ajcommons.org/sitemap.xml">
+
+<!-- ── JSON-LD STRUCTURED DATA ──────────────────── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ajcommons.org/#organization",
+      "name": "AJ Commons",
+      "legalName": "Akhester Technologies LLP",
+      "url": "https://ajcommons.org",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ajcommons.org/logo.svg",
+        "width": 320,
+        "height": 64
+      },
+      "description": "AJ Commons is an open-source foundation building free FHIR-based health data infrastructure for hospitals, clinics, and national health programmes in low- and middle-income countries.",
+      "foundingDate": "2024",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Gurugram, India"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "dpg@ajcommons.org",
+          "contactType": "DPG and partnership enquiries"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "gov@ajcommons.org",
+          "contactType": "Government and national health programmes"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "security@ajcommons.org",
+          "contactType": "Security vulnerability disclosure"
+        }
+      ],
+      "sameAs": [
+        "https://github.com/AKHester-Technologies",
+        "https://platform.akhester.com",
+        "https://www.linkedin.com/in/dr-akriti-jamwal-4b149b124/"
+      ],
+      "knowsAbout": [
+        "HL7 FHIR R4",
+        "HL7 FHIR R5",
+        "SMART App Launch v2.2",
+        "Health Information Exchange",
+        "Master Patient Index",
+        "IHE Profiles",
+        "Digital Public Goods",
+        "ABDM",
+        "Health Interoperability",
+        "Open Source Health Infrastructure"
+      ],
+      "keywords": "FHIR, open source, health infrastructure, HIE, master patient index, digital public good, HL7, SMART, IHE, ABDM",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ajcommons.org/#founder",
+      "name": "Dr. Akriti Jamwal",
+      "jobTitle": "Founder & Co-Founder",
+      "worksFor": {
+        "@id": "https://ajcommons.org/#organization"
+      },
+      "description": "Dentist-turned-health-informatics engineer. Co-Founder & CEO of dChikitsa. Co-Founder of Akhester Technologies LLP. Expert in HL7 FHIR, openEHR, ABDM, and digital health interoperability.",
+      "knowsAbout": ["HL7 FHIR", "openEHR", "ABDM", "Health Informatics", "Digital Health Interoperability", "EMR", "Health Information Exchange"],
+      "sameAs": ["https://www.linkedin.com/in/dr-akriti-jamwal-4b149b124/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ajcommons.org/#website",
+      "url": "https://ajcommons.org",
+      "name": "AJ Commons",
+      "description": "Open-source FHIR health infrastructure foundation",
+      "publisher": { "@id": "https://ajcommons.org/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://ajcommons.org/#webpage",
+      "url": "https://ajcommons.org",
+      "name": "AJ Commons — Open Source FHIR Health Infrastructure Foundation",
+      "description": "Free, open-source FHIR health data infrastructure for hospitals and national health systems. Nine independently deployable components. Apache 2.0. Digital Public Good candidate.",
+      "isPartOf": { "@id": "https://ajcommons.org/#website" },
+      "about": { "@id": "https://ajcommons.org/#organization" },
+      "author": { "@id": "https://ajcommons.org/#founder" },
+      "inLanguage": "en",
+      "dateModified": "2026-06-24"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://ajcommons.org/#ajbridge",
+      "name": "AJBridge",
+      "alternateName": "AJ Bridge HL7v2 to FHIR Gateway",
+      "description": "Open-source HL7v2 to FHIR R4/R5 integration gateway. MLLP reception for ADT, ORU, ORM, OML, MDM messages. ATNA audit, consent enforcement, SMART token validation. Drop-in OpenHIM-compatible replacement.",
+      "applicationCategory": "Health Informatics",
+      "operatingSystem": "Linux, Windows, macOS, Docker",
+      "softwareVersion": "1.0.0",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "codeRepository": "https://github.com/AKHester-Technologies",
+      "programmingLanguage": "Java",
+      "author": { "@id": "https://ajcommons.org/#organization" },
+      "keywords": "HL7v2 FHIR gateway, open source, MLLP, ADT, health interoperability"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://ajcommons.org/#ajmpi",
+      "name": "AJMPI",
+      "alternateName": "AJ Master Patient Index",
+      "description": "Open-source Master Patient Index with probabilistic matching and golden record management. IHE PDQm, PIXm, and PMIR conformant. Eliminates duplicate patient records at national scale.",
+      "applicationCategory": "Health Informatics",
+      "operatingSystem": "Linux, Windows, macOS, Docker",
+      "softwareVersion": "1.0.0",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "codeRepository": "https://github.com/AKHester-Technologies",
+      "programmingLanguage": "Java",
+      "author": { "@id": "https://ajcommons.org/#organization" },
+      "keywords": "master patient index open source, MPI, patient identity, IHE PDQm, PIXm, PMIR"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://ajcommons.org/#ajconsent",
+      "name": "AJConsent",
+      "alternateName": "AJ FHIR Consent Manager",
+      "description": "Open-source FHIR R4/R5 Consent resource lifecycle manager. Patient self-service portal, deny-by-default enforcement, IHE ATNA audit trail. GDPR, HIPAA, DISHA, and ABDM compliant.",
+      "applicationCategory": "Health Informatics",
+      "operatingSystem": "Linux, Windows, macOS, Docker",
+      "softwareVersion": "1.0.0",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "codeRepository": "https://github.com/AKHester-Technologies/ajfhir-consent-manager",
+      "programmingLanguage": "Java",
+      "author": { "@id": "https://ajcommons.org/#organization" },
+      "keywords": "FHIR consent manager open source, GDPR health, HIPAA, ABDM consent, DISHA"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ajcommons.org/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is AJ Commons software free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All AJ Commons components are licensed under the Apache License 2.0 — free to use, modify, and distribute with no usage fees, no call-home telemetry, and no proprietary lock-in. You can self-host on your own infrastructure or air-gapped government cloud."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is AJBridge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AJBridge is an open-source HL7v2 to FHIR R4/R5 integration gateway. It receives ADT, ORU, ORM, OML, and MDM messages via MLLP and converts them to FHIR resources. It includes ATNA audit, consent enforcement, and SMART token validation. It is a drop-in OpenHIM-compatible replacement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Master Patient Index and does AJ Commons have one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Master Patient Index (MPI) is a system that uniquely identifies patients across multiple healthcare facilities, eliminating duplicate records. AJMPI is AJ Commons' open-source MPI with probabilistic matching, golden record management, and IHE PDQm, PIXm, and PMIR conformance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are AJ Commons projects Digital Public Goods?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AJ Commons components are being submitted to the Digital Public Goods Alliance (DPGA) as Digital Public Goods under SDG 3 — Good Health and Well-Being. All components are Apache 2.0 licensed. Owned by Akhester Technologies LLP, transferring to AJ Health Commons upon Section 8 foundation registration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which programming language and runtime does AJ Commons use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All AJ Commons components are built on Java 21 (OpenJDK) and Spring Boot 3, using HAPI FHIR JPA v7.4.5 as the FHIR server. All dependencies are open source under Apache 2.0 or compatible licences. Components can be deployed via Docker Compose on any POSIX OS or cloud environment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does AJ Commons support ABDM — Ayushman Bharat Digital Mission?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. AJ Commons components align with ABDM Health Data Management Policy and ABDM FHIR profiles. AJConsent implements the consent framework required by ABDM. AJBridge supports HL7v2 to FHIR conversion aligned with ABDM's interoperability requirements. AJMPI supports the patient identity resolution patterns used in ABDM's Health ID system."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ──────────────────────────────────────── */
+:root {
+  --stone:    #F5F5F3;
+  --white:    #FFFFFF;
+  --ink:      #1A1F2E;
+  --ink-mid:  #4A5568;
+  --ink-lt:   #718096;
+  --rule:     #D8DDE5;
+  --green:    #1B5E45;
+  --green-lt: #EBF5F0;
+  --green-md: #2D7A5C;
+  --gold:     #8A6914;
+  --gold-lt:  #FDF6E3;
+
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans:  'Inter', system-ui, sans-serif;
+
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  32px;
+  --space-lg:  64px;
+  --space-xl:  96px;
+  --space-2xl: 140px;
+
+  --max: 1080px;
+  --mid: 720px;
+}
+
+/* ── RESET ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--stone);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+
+/* ── NAV ─────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--stone);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 var(--space-md);
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--green);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nav-mark svg { display: block; }
+.nav-name {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+.nav-links a {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-mid);
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--green); }
+.nav-links .nav-gh {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--white);
+  transition: border-color 0.15s, background 0.15s;
+}
+.nav-links .nav-gh:hover { border-color: var(--green); background: var(--green-lt); }
+.nav-gh svg { width: 15px; height: 15px; }
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-lg);
+  align-items: start;
+}
+.hero-eyebrow {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--green);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: var(--space-md);
+  max-width: 540px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--green);
+}
+.hero-body {
+  font-size: 17px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: var(--space-md);
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--green-md); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-mid);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--white);
+  transition: border-color 0.15s;
+}
+.btn-secondary:hover { border-color: var(--green); color: var(--green); }
+
+/* hero aside — standards strip */
+.hero-aside {
+  padding-top: 8px;
+}
+.aside-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  margin-bottom: 14px;
+}
+.aside-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--space-md);
+}
+.badge {
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+  background: var(--white);
+  color: var(--ink-mid);
+  white-space: nowrap;
+}
+.badge.green { background: var(--green-lt); border-color: #9EC9B8; color: var(--green); }
+
+.aside-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: var(--space-sm);
+}
+.stat {
+  background: var(--white);
+  padding: 16px;
+}
+.stat-n {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-l {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-lt);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── DATELINE STRIP ── the signature element ─────── */
+.dateline {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--white);
+  padding: 18px var(--space-md);
+  overflow: hidden;
+}
+.dateline-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+.dateline-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+  white-space: nowrap;
+  margin-right: 24px;
+  padding-right: 24px;
+  border-right: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+.dateline-countries {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink-mid);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: baseline;
+}
+.country-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+}
+.country-name {
+  color: var(--ink);
+  font-style: italic;
+}
+.country-sep {
+  color: var(--rule);
+  margin: 0 14px;
+  font-style: normal;
+  font-size: 11px;
+}
+
+/* ── SECTION WRAPPER ─────────────────────────────── */
+.section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+.section + .section { padding-top: 0; }
+
+.section-eyebrow {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+}
+.section-sub {
+  font-size: 16px;
+  color: var(--ink-mid);
+  max-width: 520px;
+  margin-bottom: var(--space-lg);
+}
+
+/* ── MISSION BLOCK ───────────────────────────────── */
+.mission {
+  background: var(--green);
+  padding: var(--space-xl) var(--space-md);
+}
+.mission-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+.mission-quote {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.mission-quote::before {
+  content: '\201C';
+  font-size: 64px;
+  color: rgba(255,255,255,0.25);
+  line-height: 0;
+  vertical-align: -22px;
+  margin-right: 4px;
+}
+.mission-pillars {
+  display: grid;
+  gap: var(--space-sm);
+}
+.pillar {
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.pillar-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+  letter-spacing: 0.01em;
+}
+.pillar-body {
+  font-size: 13px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.55;
+}
+
+/* ── PROJECTS LEDGER ─────────────────────────────── */
+.ledger {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
+}
+.ledger-head {
+  display: grid;
+  grid-template-columns: 200px 1fr 120px 96px;
+  gap: 0;
+  padding: 10px 24px;
+  background: var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.ledger-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 120px 96px;
+  gap: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+  transition: background 0.12s;
+}
+.ledger-row:last-child { border-bottom: none; }
+.ledger-row:hover { background: var(--stone); }
+.proj-name {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--ink);
+  font-style: italic;
+  line-height: 1.3;
+  padding-right: var(--space-sm);
+}
+.proj-name span {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 2px;
+}
+.proj-desc {
+  font-size: 14px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  padding-right: var(--space-md);
+}
+.proj-desc strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+.proj-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+.status-stable { background: var(--green-lt); color: var(--green); }
+.status-soon   { background: #FEF3C7; color: #92400E; }
+.proj-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  margin-top: 2px;
+}
+.proj-link {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 0.12s;
+}
+.proj-link:hover { opacity: 0.7; }
+.proj-link svg { width: 11px; height: 11px; }
+
+/* ── STANDARDS ───────────────────────────────────── */
+.standards-bg {
+  background: var(--white);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.standards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.std-card {
+  background: var(--white);
+  padding: 24px;
+  transition: background 0.12s;
+}
+.std-card:hover { background: var(--stone); }
+.std-org {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+.std-name {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.std-desc {
+  font-size: 12.5px;
+  color: var(--ink-lt);
+  line-height: 1.55;
+}
+
+/* ── GOVERNANCE ──────────────────────────────────── */
+.governance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+.gov-block {}
+.gov-block h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: var(--space-sm);
+  line-height: 1.25;
+}
+.gov-block p {
+  font-size: 15px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+}
+.gov-block p:last-child { margin-bottom: 0; }
+.gov-rules {
+  display: grid;
+  gap: 10px;
+  margin-top: var(--space-sm);
+}
+.gov-rule {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 7px;
+  font-size: 13.5px;
+  color: var(--ink-mid);
+  line-height: 1.55;
+}
+.gov-rule-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--green-lt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.gov-rule-icon svg { width: 10px; height: 10px; }
+
+/* ── DPG SECTION ─────────────────────────────────── */
+.dpg-bg {
+  background: var(--gold-lt);
+  border-top: 1px solid #E8D9A0;
+  border-bottom: 1px solid #E8D9A0;
+}
+/* indicator accordion */
+.ind-list { display: grid; gap: 2px; margin: var(--space-sm) 0; }
+.ind-item {
+  background: var(--white);
+  border: 1px solid #D4C47A;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.ind-head {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+.ind-head::-webkit-details-marker { display: none; }
+.ind-num {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--gold);
+  line-height: 1;
+  text-align: center;
+}
+.ind-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.ind-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.ib-pass { background: #D1FAE5; color: #065F46; }
+.ib-partial { background: #FEF3C7; color: #92400E; }
+.ib-na { background: #F3F4F6; color: #6B7280; }
+.ind-body {
+  padding: 0 16px 14px 62px;
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.65;
+  border-top: 1px solid #EDE5B0;
+}
+.ind-body p { margin-bottom: 8px; }
+.ind-body p:last-child { margin-bottom: 0; }
+.ind-body strong { color: var(--ink); }
+.ind-body a { color: var(--green); font-weight: 500; }
+.ind-evidence {
+  background: #FFFBEB;
+  border-left: 3px solid var(--gold);
+  padding: 10px 12px;
+  margin-top: 10px;
+  border-radius: 0 4px 4px 0;
+  font-size: 12.5px;
+  color: var(--ink-mid);
+}
+.ind-evidence strong {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+/* ownership box */
+.ownership-box {
+  background: var(--white);
+  border: 1px solid #D4C47A;
+  border-radius: 8px;
+  padding: 20px 22px;
+  margin: var(--space-sm) 0;
+}
+.ownership-box h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.ownership-box p {
+  font-size: 13.5px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+/* status table */
+.dpg-table {
+  background: var(--white);
+  border: 1px solid #D4C47A;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: var(--space-md);
+}
+.dpg-table-head {
+  display: grid;
+  grid-template-columns: 1fr 80px 90px;
+  padding: 10px 16px;
+  background: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  gap: var(--space-sm);
+}
+.dpg-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 90px;
+  padding: 13px 16px;
+  border-bottom: 1px solid #EDE5B0;
+  gap: var(--space-sm);
+  align-items: center;
+  font-size: 13px;
+}
+.dpg-row:last-child { border-bottom: none; }
+.dpg-proj { font-weight: 600; color: var(--ink); font-size: 13.5px; }
+.dpg-proj span { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-lt); margin-top: 1px; }
+.dpg-lic { font-size: 11.5px; font-weight: 600; color: var(--green); }
+.dpg-stat {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.dpg-submitted  { background: #FEF3C7; color: #92400E; }
+.dpg-pending    { background: #EDE9FE; color: #4C1D95; }
+.dpg-preparing  { background: #F3F4F6; color: #4B5563; }
+/* sdg chips */
+.sdg-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.sdg-chip {
+  font-size: 11px; font-weight: 600;
+  padding: 3px 9px; border-radius: 4px;
+  background: #E0F2FE; color: #0369A1;
+  border: 1px solid #BAE6FD;
+}
+
+/* ── CONTACT ─────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+.contact-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-card-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--green-lt);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-card-icon svg { width: 18px; height: 18px; color: var(--green); }
+.contact-card h3 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.contact-card p {
+  font-size: 13px;
+  color: var(--ink-lt);
+  line-height: 1.55;
+  flex: 1;
+}
+.contact-card a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+}
+.contact-card a:hover { opacity: 0.75; }
+
+/* ── FOOTER ──────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--rule);
+  background: var(--ink);
+  padding: var(--space-lg) var(--space-md);
+}
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr 1fr;
+  gap: var(--space-lg);
+}
+.footer-brand .footer-name {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-brand p {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+.footer-col h4 {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 14px;
+}
+.footer-col ul { display: grid; gap: 10px; }
+.footer-col ul li a {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.12s;
+}
+.footer-col ul li a:hover { color: #fff; }
+.footer-bottom {
+  max-width: var(--max);
+  margin: var(--space-lg) auto 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+}
+.footer-bottom a { color: rgba(255,255,255,0.4); transition: color 0.12s; }
+.footer-bottom a:hover { color: rgba(255,255,255,0.75); }
+
+/* ── DIVIDERS ────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--rule);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-aside { display: none; }
+  .mission-inner { grid-template-columns: 1fr; gap: var(--space-md); }
+  .ledger-head, .ledger-row { grid-template-columns: 160px 1fr; }
+  .ledger-head .col-status,
+  .ledger-head .col-links,
+  .ledger-row .proj-status,
+  .ledger-row .proj-links { display: none; }
+  .standards-grid { grid-template-columns: repeat(2, 1fr); }
+  .governance-grid { grid-template-columns: 1fr; }
+  .dpg-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+}
+@media (max-width: 600px) {
+  .nav-links .nav-gh span { display: none; }
+  .section { padding: var(--space-lg) var(--space-sm); }
+  .standards-grid { grid-template-columns: 1fr; }
+  .ledger-row { padding: 16px; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .hero { padding: var(--space-lg) var(--space-sm) var(--space-md); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <div class="nav-mark">
+        <svg viewBox="0 0 64 74" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;">
+          <polygon points="32,0 64,18.4 64,55.4 32,73.7 0,55.4 0,18.4" fill="none" stroke="white" stroke-width="5" stroke-linejoin="round"/>
+          <circle cx="48" cy="9.2"  r="7" fill="white"/>
+          <circle cx="64" cy="36.8" r="7" fill="white"/>
+          <circle cx="48" cy="64.5" r="7" fill="white"/>
+          <circle cx="16" cy="64.5" r="7" fill="white"/>
+          <circle cx="0"  cy="36.8" r="7" fill="white"/>
+          <circle cx="16" cy="9.2"  r="7" fill="white"/>
+          <line x1="32" y1="36.8" x2="48" y2="9.2"  stroke="white" stroke-width="2.5" opacity="0.4"/>
+          <line x1="32" y1="36.8" x2="64" y2="36.8" stroke="white" stroke-width="2.5" opacity="0.4"/>
+          <line x1="32" y1="36.8" x2="48" y2="64.5" stroke="white" stroke-width="2.5" opacity="0.4"/>
+          <line x1="32" y1="36.8" x2="16" y2="64.5" stroke="white" stroke-width="2.5" opacity="0.4"/>
+          <line x1="32" y1="36.8" x2="0"  y2="36.8" stroke="white" stroke-width="2.5" opacity="0.4"/>
+          <line x1="32" y1="36.8" x2="16" y2="9.2"  stroke="white" stroke-width="2.5" opacity="0.4"/>
+          <circle cx="32" cy="36.8" r="10"  fill="white"/>
+          <circle cx="32" cy="36.8" r="5"   fill="var(--green)"/>
+        </svg>
+      </div>
+      <span class="nav-name">AJ Commons</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#governance">Governance</a>
+      <a href="#dpg">DPG</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/AKHester-Technologies" target="_blank" rel="noopener" class="nav-gh">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────── -->
+<section style="background:var(--stone);">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Open Source Foundation</div>
+      <h1>Open infrastructure for health systems that serve <em>everyone</em></h1>
+      <p class="hero-body">AJ Commons builds and stewards freely available FHIR-based health data infrastructure — connecting hospitals, resolving patient identity, and protecting populations at national scale.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          Explore projects
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://github.com/AKHester-Technologies" target="_blank" class="btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          View on GitHub
+        </a>
+      </div>
+    </div>
+    <div class="hero-aside">
+      <div class="aside-label">Built on open standards</div>
+      <div class="aside-badges">
+        <span class="badge green">HL7® FHIR® R4/R5</span>
+        <span class="badge green">SMART App Launch v2.2</span>
+        <span class="badge">IHE ATNA</span>
+        <span class="badge">IHE PDQm / PIXm</span>
+        <span class="badge">IHE MHD</span>
+        <span class="badge">CDS Hooks</span>
+        <span class="badge">mCSD</span>
+        <span class="badge">Apache 2.0</span>
+      </div>
+      <div class="aside-stats">
+        <div class="stat">
+          <div class="stat-n">9</div>
+          <div class="stat-l">Components</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">500+</div>
+          <div class="stat-l">Automated tests</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">Java 21</div>
+          <div class="stat-l">Runtime</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">Apache 2</div>
+          <div class="stat-l">Licence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DATELINE — THE SIGNATURE ELEMENT ──────────── -->
+<div class="dateline">
+  <div class="dateline-inner">
+    <span class="dateline-tag">Health systems aligned</span>
+    <div class="dateline-countries">
+      <span class="country-item"><span class="country-name">Sri Lanka</span><span class="country-sep">·</span></span>
+      <span class="country-item"><span class="country-name">Nepal</span><span class="country-sep">·</span></span>
+      <span class="country-item"><span class="country-name">India (ABDM)</span><span class="country-sep">·</span></span>
+      <span class="country-item"><span class="country-name">Ethiopia</span><span class="country-sep">·</span></span>
+      <span class="country-item"><span class="country-name">Rwanda</span><span class="country-sep">·</span></span>
+      <span class="country-item"><span class="country-name">Philippines</span><span class="country-sep">·</span></span>
+      <span class="country-item"><span class="country-name">Nigeria</span><span class="country-sep">·</span></span>
+      <span class="country-item"><span class="country-name">Kenya</span><span class="country-sep">·</span></span>
+      <span class="country-item"><span class="country-name">Bangladesh</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ── ABOUT ───────────────────────────────────────── -->
+<section id="about" style="background:var(--white);border-bottom:1px solid var(--rule);">
+  <div style="max-width:var(--max);margin:0 auto;padding:var(--space-lg) var(--space-md);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);align-items:center;">
+    <div>
+      <div class="section-eyebrow">Our story</div>
+      <h2 style="font-family:var(--serif);font-size:clamp(24px,3vw,34px);font-weight:400;color:var(--ink);line-height:1.2;letter-spacing:-0.02em;margin-bottom:var(--space-sm);">Built from the gaps a clinician sees every day</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.75;margin-bottom:14px;">AJ Commons was founded by <strong>Akriti Jamwal</strong>, a dentist-turned-health-informatics engineer who saw the data fragmentation problem from both sides of the stethoscope. A clinician who later became Co-Founder and CEO of dChikitsa — a digital health platform serving hospitals and clinics across India — she built firsthand knowledge of what ABDM compliance, EMR interoperability, and health information exchange look like on the ground, not in a whitepaper.</p>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.75;margin-bottom:14px;">The tools to fix this existed — HL7 FHIR, SMART App Launch, IHE profiles — but the open, deployable implementations that low-resource health systems could actually use did not. AJ Commons builds them.</p>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.75;">Every component is built to run in a district hospital in Bihar as reliably as it runs in a teaching hospital in Colombo. No proprietary lock-in. No usage fees. No cloud dependency. Just open infrastructure that works.</p>
+    </div>
+    <div style="display:grid;gap:12px;">
+      <div style="background:var(--stone);border:1px solid var(--rule);border-radius:8px;padding:20px 22px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">Founder</div>
+        <div style="font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:4px;">Dr. Akriti Jamwal</div>
+        <div style="font-size:13px;color:var(--ink-lt);line-height:1.6;">Dentist · Co-Founder &amp; CEO, dChikitsa · Co-Founder, Akhester Technologies · Health IT Standards &amp; Interoperability · HL7 FHIR · openEHR · ABDM</div>
+        <a href="https://www.linkedin.com/in/dr-akriti-jamwal-4b149b124/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:600;color:var(--green);">LinkedIn ↗</a>
+      </div>
+      <div style="background:var(--stone);border:1px solid var(--rule);border-radius:8px;padding:20px 22px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">Mission</div>
+        <div style="font-size:14px;color:var(--ink-mid);line-height:1.6;">To build and steward open FHIR health data infrastructure that any government, hospital, or implementer can deploy freely — advancing universal health coverage through shared public digital goods.</div>
+      </div>
+      <div style="background:var(--stone);border:1px solid var(--rule);border-radius:8px;padding:20px 22px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">Model</div>
+        <div style="font-size:14px;color:var(--ink-mid);line-height:1.6;">Open core — AJ Commons components are free forever. The commercial <a href="https://platform.akhester.com" target="_blank" style="color:var(--green);font-weight:500;">Jam Platform</a> (built on these components) sustains ongoing development. Same model as OpenMRS, OpenFn, and DHIS2.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MISSION ────────────────────────────────────── -->
+<div class="mission">
+  <div class="mission-inner">
+    <div>
+      <div class="mission-quote">
+        Health data should flow as freely as health itself — across facilities, across systems, across borders — with the patient's consent and under open governance.
+      </div>
+    </div>
+    <div class="mission-pillars">
+      <div class="pillar">
+        <div class="pillar-title">Open by default</div>
+        <div class="pillar-body">Every component Apache 2.0 licensed. No proprietary lock-in, no call-home telemetry, no usage fees. Deploy on your own infrastructure or air-gapped government cloud.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Standards first</div>
+        <div class="pillar-body">Built entirely on HL7 FHIR R4/R5, SMART App Launch v2.2, IHE profiles, and WHO SMART Guidelines. No proprietary protocols — interoperable with every standards-compliant system.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Built for LMIC scale</div>
+        <div class="pillar-body">Designed for national digital health deployments in low- and middle-income countries — low resource requirements, DHIS2 integration, offline-capable nodes, PEPFAR reporting built in.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Openly governed</div>
+        <div class="pillar-body">Community Code of Conduct, public roadmap, open contribution process. Steered by AJ Health Commons toward Digital Public Goods certification under the DPGA Standard.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROJECTS ───────────────────────────────────── -->
+<section id="projects" class="section">
+  <div class="section-eyebrow">Components</div>
+  <h2 class="section-title">Nine independently deployable components</h2>
+  <p class="section-sub">Use what you need. Replace what you have. Every component works alone or as part of the full AJ Commons stack.</p>
+
+  <div class="ledger">
+    <div class="ledger-head">
+      <div>Component</div>
+      <div>Function</div>
+      <div class="col-status">Status</div>
+      <div class="col-links">Links</div>
+    </div>
+
+    <div class="ledger-row">
+      <div class="proj-name"><span>AJBridge</span>HL7v2 → FHIR Gateway</div>
+      <div class="proj-desc"><strong>Connects your hospital HIS to the FHIR ecosystem</strong>MLLP reception for ADT, ORU, ORM, OML, MDM messages. Converts HL7v2 to FHIR R4/R5. ATNA audit, consent enforcement, SMART token validation. Drop-in OpenHIM-compatible replacement.</div>
+      <div><span class="proj-status status-soon">Coming soon</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/AKHester-Technologies" class="proj-link" target="_blank">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ledger-row">
+      <div class="proj-name"><span>AJMPI</span>Master Patient Index</div>
+      <div class="proj-desc"><strong>Resolves patient identity across every connected facility</strong>Probabilistic matching, golden record management, IHE PDQm / PIXm / PMIR conformant. Eliminates duplicate patient records at national scale.</div>
+      <div><span class="proj-status status-soon">Coming soon</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/AKHester-Technologies" class="proj-link" target="_blank">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ledger-row">
+      <div class="proj-name"><span>AJConsent</span>Consent Manager</div>
+      <div class="proj-desc"><strong>Patient-controlled data access with GDPR · HIPAA · DISHA compliance</strong>FHIR R4/R5 Consent resource lifecycle. Patient self-service portal. Deny-by-default enforcement. IHE ATNA audit trail. 181 tests.</div>
+      <div><span class="proj-status status-stable">Stable v1.0.0</span></div>
+      <div class="proj-links">
+        <a href="https://docs.ajcommons.org/consent-manager" class="proj-link" target="_blank">Docs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="https://github.com/AKHester-Technologies/ajfhir-consent-manager" class="proj-link" target="_blank">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ledger-row">
+      <div class="proj-name"><span>AJHFR</span>Health Facility Registry</div>
+      <div class="proj-desc"><strong>The authoritative directory of every hospital and clinic in your network</strong>mCSD-conformant IHE ITI-90 search. Admin portal. Auto-provisioning from HL7v2 MSH-4 facility codes. Used to route HL7 messages and resolve facility identifiers across the HIE.</div>
+      <div><span class="proj-status status-soon">Coming soon</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/AKHester-Technologies" class="proj-link" target="_blank">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ledger-row">
+      <div class="proj-name"><span>AJGuard</span>Cross-Facility Safety</div>
+      <div class="proj-desc"><strong>Catches what no single hospital can see alone</strong>Drug interaction and allergy checks across all connected facilities. CDS Hooks integration fires at point of prescribing. Cross-facility medication history. Population safety surveillance for MoH reporting.</div>
+      <div><span class="proj-status status-soon">Coming soon</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/AKHester-Technologies" class="proj-link" target="_blank">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ledger-row">
+      <div class="proj-name"><span>AJAuth</span>SMART Auth Server</div>
+      <div class="proj-desc"><strong>Complete SMART App Launch v2.2 authorisation server</strong>PKCE S256 enforced. Atomic launch tokens. RS256 JWT with JWKS. Azure AD · Okta · Epic IdP federation. 90 tests. Production-ready alternative to Keycloak SMART extensions.</div>
+      <div><span class="proj-status status-stable">Stable v0.2.3</span></div>
+      <div class="proj-links">
+        <a href="https://docs.ajcommons.org/auth-server" class="proj-link" target="_blank">Docs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="https://github.com/AKHester-Technologies/ajfhir-smart-auth-server" class="proj-link" target="_blank">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 12-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ledger-row">
+      <div class="proj-name"><span>AJConnect</span>CDS Hooks Engine</div>
+      <div class="proj-desc"><strong>Clinical decision support at the moment of care</strong>CDS Hooks 2.0 service orchestrator. Aggregates hooks from multiple CDS providers. Feeds AJGuard safety alerts to any SMART-enabled EHR at point of prescribing or ordering.</div>
+      <div><span class="proj-status status-soon">Coming soon</span></div>
+      <div class="proj-links">
+        <a href="https://github.com/AKHester-Technologies" class="proj-link" target="_blank">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ledger-row">
+      <div class="proj-name"><span>AJImmunise</span>Vaccination App</div>
+      <div class="proj-desc"><strong>WHO-schedule vaccination management with digital certificates</strong>SMART on FHIR vaccination history. WHO schedule forecasting. Printable WHO VDS-NC digital certificates with QR codes. Aligned with GAVI and NIP reporting requirements. 28 tests.</div>
+      <div><span class="proj-status status-stable">Stable v1.0.0</span></div>
+      <div class="proj-links">
+        <a href="https://docs.ajcommons.org/immunisation" class="proj-link" target="_blank">Docs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="https://github.com/AJSmart/aj-fhir-immunization" class="proj-link" target="_blank">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ledger-row">
+      <div class="proj-name"><span>AJReferral</span>Cross-Facility Referral</div>
+      <div class="proj-desc"><strong>Tracks patients across facility boundaries, from referral to receipt</strong>FHIR R4/R5 ServiceRequest + Task state machine. IHE MHD document exchange. Real-time status notifications. Prevents patients from being lost between facilities.</div>
+      <div><span class="proj-status status-stable">Stable v1.0.0</span></div>
+      <div class="proj-links">
+        <a href="https://docs.ajcommons.org/referral" class="proj-link" target="_blank">Docs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="https://github.com/AKHester-Technologies" class="proj-link" target="_blank">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:18px;font-size:13px;color:var(--ink-lt);text-align:center;">
+    Full technical documentation at <a href="https://docs.ajcommons.org" style="color:var(--green);font-weight:500;">docs.ajcommons.org</a> · All components Java 21 · Spring Boot 3 · Apache 2.0
+  </p>
+
+  <!-- HOW COMPONENTS CONNECT -->
+  <div style="margin-top:var(--space-lg);background:var(--white);border:1px solid var(--rule);border-radius:10px;overflow:hidden;">
+    <div style="background:var(--ink);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);">How the components work together — a national HIE</span>
+      <span style="font-size:11px;color:rgba(255,255,255,.35);">Each layer depends on the one above it</span>
+    </div>
+    <div style="padding:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--rule);">
+      <div style="background:var(--white);padding:18px 16px;border-right:1px solid var(--rule);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">① Connect</div>
+        <div style="font-family:var(--serif);font-size:15px;color:var(--ink);margin-bottom:6px;">AJBridge</div>
+        <div style="font-size:12px;color:var(--ink-lt);line-height:1.55;">Receives HL7v2 from hospital HIS. Converts to FHIR. Feeds every downstream component.</div>
+      </div>
+      <div style="background:var(--white);padding:18px 16px;border-right:1px solid var(--rule);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">② Identify</div>
+        <div style="font-family:var(--serif);font-size:15px;color:var(--ink);margin-bottom:6px;">AJMPI + AJHFR</div>
+        <div style="font-size:12px;color:var(--ink-lt);line-height:1.55;">Resolves each patient to a single golden record. AJHFR routes messages to the right facility.</div>
+      </div>
+      <div style="background:var(--white);padding:18px 16px;border-right:1px solid var(--rule);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">③ Govern</div>
+        <div style="font-family:var(--serif);font-size:15px;color:var(--ink);margin-bottom:6px;">AJConsent + AJAuth</div>
+        <div style="font-size:12px;color:var(--ink-lt);line-height:1.55;">Patient controls who sees their data. AJAuth issues SMART tokens. Every access is audited.</div>
+      </div>
+      <div style="background:var(--white);padding:18px 16px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">④ Act</div>
+        <div style="font-family:var(--serif);font-size:15px;color:var(--ink);margin-bottom:6px;">AJGuard + AJConnect</div>
+        <div style="font-size:12px;color:var(--ink-lt);line-height:1.55;">Cross-facility drug safety fires at point of prescribing. Population signals flow to DHIS2.</div>
+      </div>
+    </div>
+    <div style="padding:12px 24px;background:var(--stone);border-top:1px solid var(--rule);font-size:12px;color:var(--ink-lt);">
+      AJImmunise and AJReferral operate independently or alongside the full stack. Full architecture diagram: <a href="https://docs.ajcommons.org/architecture" style="color:var(--green);font-weight:500;">docs.ajcommons.org/architecture</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STANDARDS ──────────────────────────────────── -->
+<div class="standards-bg">
+  <section class="section" style="padding-top:var(--space-lg);padding-bottom:var(--space-lg);">
+    <div class="section-eyebrow">Standards alignment</div>
+    <h2 class="section-title">Built on open standards, not proprietary protocols</h2>
+    <p class="section-sub" style="margin-bottom:var(--space-md);">Every component implements published international standards. No vendor lock-in. Interoperable with any conformant system.</p>
+
+    <div class="standards-grid">
+      <div class="std-card">
+        <div class="std-org">HL7</div>
+        <div class="std-name">FHIR R4 / R5</div>
+        <div class="std-desc">The international standard for health data exchange. Required by every major EHR vendor and national health system deploying interoperability.</div>
+      </div>
+      <div class="std-card">
+        <div class="std-org">HL7</div>
+        <div class="std-name">SMART App Launch v2.2</div>
+        <div class="std-desc">Secure clinical app authorisation. Mandated by ONC HTI-1. Lets any SMART app access patient data from any connected EHR with proper consent.</div>
+      </div>
+      <div class="std-card">
+        <div class="std-org">IHE</div>
+        <div class="std-name">PDQm · PIXm · PMIR</div>
+        <div class="std-desc">Patient identity query and cross-referencing profiles. The foundation of a working Master Patient Index in any multi-facility health network.</div>
+      </div>
+      <div class="std-card">
+        <div class="std-org">IHE</div>
+        <div class="std-name">ATNA Audit Trail</div>
+        <div class="std-desc">Every access event written as a FHIR AuditEvent. Required for HIPAA, GDPR, and DISHA compliance. Queryable, exportable, regulatory-ready.</div>
+      </div>
+      <div class="std-card">
+        <div class="std-org">IHE</div>
+        <div class="std-name">MHD · mCSD</div>
+        <div class="std-desc">Mobile document exchange and care services discovery. Lightweight profiles adopted by national patient record systems and facility registries worldwide.</div>
+      </div>
+      <div class="std-card">
+        <div class="std-org">HL7</div>
+        <div class="std-name">CDS Hooks 2.0</div>
+        <div class="std-desc">Real-time clinical decision support at the point of care. Powers AJGuard's cross-facility drug safety alerts inside any connected EHR or prescribing system.</div>
+      </div>
+      <div class="std-card">
+        <div class="std-org">WHO</div>
+        <div class="std-name">SMART Guidelines</div>
+        <div class="std-desc">WHO's framework for encoding clinical guidance as computable FHIR artefacts. AJImmunise and AJGuard are aligned to WHO SMART guideline patterns.</div>
+      </div>
+      <div class="std-card">
+        <div class="std-org">UN / DPGA</div>
+        <div class="std-name">Digital Public Goods Standard</div>
+        <div class="std-desc">Nine-indicator standard for open source software that advances the Sustainable Development Goals. AJ Commons projects are DPG candidates for SDG 3 — Good Health.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── GOVERNANCE ─────────────────────────────────── -->
+<section id="governance" class="section">
+  <div class="section-eyebrow">Governance</div>
+  <h2 class="section-title">Open governance, not corporate control</h2>
+  <p class="section-sub">AJ Commons projects are independently stewarded. The code is not at the mercy of any single organisation's commercial decisions.</p>
+
+  <div class="governance-grid">
+    <div class="gov-block">
+      <h3>Who stewards AJ Commons</h3>
+      <p>AJ Commons is currently stewarded by Akhester Technologies LLP, the founding organisation. All projects are licensed under Apache 2.0 — meaning no single entity controls the code's future. Any conformant implementer may fork, deploy, or build on the work.</p>
+      <p>A formal foundation entity — AJ Health Commons — is being registered as a Section 8 non-profit company in India. Upon registration, stewardship and trademark ownership of all AJ projects will transfer to the foundation, placing them permanently in the public interest.</p>
+      <p>The commercial Jam platform — built on these open components — is maintained by Akhester Technologies. Commercial revenue sustains open source development. This is the open-core model that powers OpenMRS, OpenFn, and DHIS2.</p>
+    </div>
+    <div class="gov-block">
+      <h3>Governance commitments</h3>
+      <div class="gov-rules">
+        <div class="gov-rule">
+          <div class="gov-rule-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+          </div>
+          <div>Apache 2.0 licence — permanent, irrevocable, on every repository</div>
+        </div>
+        <div class="gov-rule">
+          <div class="gov-rule-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+          </div>
+          <div>Public CODE_OF_CONDUCT.md and CONTRIBUTING.md in every repo</div>
+        </div>
+        <div class="gov-rule">
+          <div class="gov-rule-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+          </div>
+          <div>Public roadmap — decisions made openly via <a href="https://github.com/AKHester-Technologies/aj-commons/discussions" target="_blank" style="color:var(--green);font-weight:500;">GitHub Discussions</a></div>
+        </div>
+        <div class="gov-rule">
+          <div class="gov-rule-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+          </div>
+          <div>No call-home telemetry, no usage metering, no licence keys in OSS components</div>
+        </div>
+        <div class="gov-rule">
+          <div class="gov-rule-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+          </div>
+          <div>DPG Standard compliance — applications submitted to DPGA for each component</div>
+        </div>
+        <div class="gov-rule">
+          <div class="gov-rule-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+          </div>
+          <div>Foundation registration in progress — IP transfer to AJ Health Commons upon completion</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMMUNITY ──────────────────────────────────── -->
+<div style="background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
+  <div style="max-width:var(--max);margin:0 auto;padding:var(--space-lg) var(--space-md);">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden;">
+      <div style="background:var(--white);padding:24px 22px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">GitHub</div>
+        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:6px;">Source code</div>
+        <div style="font-size:13px;color:var(--ink-lt);line-height:1.55;margin-bottom:12px;">Browse repos, open issues, submit pull requests, and follow releases.</div>
+        <a href="https://github.com/AKHester-Technologies" target="_blank" style="font-size:12.5px;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:4px;">github.com/AKHester-Technologies →</a>
+      </div>
+      <div style="background:var(--white);padding:24px 22px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">Discussions</div>
+        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:6px;">Community forum</div>
+        <div style="font-size:13px;color:var(--ink-lt);line-height:1.55;margin-bottom:12px;">Ask questions, share implementations, propose features, and engage with the roadmap.</div>
+        <a href="https://github.com/AKHester-Technologies/aj-commons/discussions" target="_blank" style="font-size:12.5px;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:4px;">GitHub Discussions →</a>
+      </div>
+      <div style="background:var(--white);padding:24px 22px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">FHIR Chat</div>
+        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:6px;">HL7 community</div>
+        <div style="font-size:13px;color:var(--ink-lt);line-height:1.55;margin-bottom:12px;">We participate in HL7 FHIR Chat — find us in the SMART App Launch channel.</div>
+        <a href="https://chat.fhir.org/#narrow/channel/179170-smart" target="_blank" style="font-size:12.5px;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:4px;">chat.fhir.org →</a>
+      </div>
+      <div style="background:var(--white);padding:24px 22px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">Stay updated</div>
+        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:6px;">Release notices</div>
+        <div style="font-size:13px;color:var(--ink-lt);line-height:1.55;margin-bottom:12px;">Watch the GitHub organisation for new releases, security patches, and DPG status updates.</div>
+        <a href="https://github.com/AKHester-Technologies" target="_blank" style="font-size:12.5px;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:4px;">Watch on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── DPG ────────────────────────────────────────── -->
+<div id="dpg" class="dpg-bg">
+  <section class="section">
+    <div class="section-eyebrow">Digital Public Goods — Evidence Page</div>
+    <h2 class="section-title">DPG Standard compliance — all 9 indicators</h2>
+    <p class="section-sub" style="margin-bottom:var(--space-md);">
+      This page serves as the official ownership and compliance evidence for AJ Commons DPG applications submitted to the Digital Public Goods Alliance (DPGA). URL submitted: <code style="font-size:12px;background:#fff;padding:2px 6px;border-radius:3px;border:1px solid #D4C47A;">ajcommons.org/#dpg</code>
+    </p>
+
+    <!-- OWNERSHIP BOX — Indicator 3 primary evidence -->
+    <div class="ownership-box" style="margin-bottom:var(--space-md);">
+      <h4>Indicator 3 — Ownership statement (primary evidence)</h4>
+      <p>All AJ Commons projects listed on this page are owned by <strong>Akhester Technologies LLP</strong>, registered in India. All components are released under the <strong>Apache License 2.0</strong> (OSI-approved). Upon registration of AJ Health Commons as a Section 8 non-profit company in India, stewardship and trademark ownership will transfer permanently to the foundation. Source code: <a href="https://github.com/AKHester-Technologies">github.com/AKHester-Technologies</a>. Copyright notices are present in every repository. Ownership enquiries: <a href="mailto:dpg@ajcommons.org">dpg@ajcommons.org</a></p>
+    </div>
+
+    <!-- 9 INDICATORS -->
+    <div class="ind-list">
+
+      <!-- 1 — SDG Relevance -->
+      <details class="ind-item" open>
+        <summary class="ind-head">
+          <span class="ind-num">1</span>
+          <span class="ind-label">SDG Relevance</span>
+          <span class="ind-badge ib-pass">✓ Met</span>
+        </summary>
+        <div class="ind-body">
+          <p>AJ Commons components directly advance <strong>SDG 3 — Good Health and Well-Being</strong> by providing open digital infrastructure that enables health data exchange, patient identity resolution, and clinical decision support in low- and middle-income country health systems.</p>
+          <div class="sdg-chips">
+            <span class="sdg-chip">SDG 3.8 — Universal Health Coverage</span>
+            <span class="sdg-chip">SDG 3.4 — Non-Communicable Diseases</span>
+            <span class="sdg-chip">SDG 3.b — Medicines &amp; Vaccines access</span>
+            <span class="sdg-chip">SDG 3.d — Health security &amp; surveillance</span>
+          </div>
+          <div class="ind-evidence">
+            <strong>Per-component SDG mapping</strong>
+            <strong>AJBridge / AJMPI:</strong> SDG 3.8 — connects fragmented hospital HIS systems to a shared health record, directly enabling universal health coverage infrastructure.<br>
+            <strong>AJConsent:</strong> SDG 3.8 — patient-controlled data access aligns with ABDM, GDPR, and DISHA consent requirements for national health systems.<br>
+            <strong>AJHFR:</strong> SDG 3.8 — authoritative facility directory is a foundational requirement for any national health information exchange.<br>
+            <strong>AJGuard:</strong> SDG 3.4 + 3.d — cross-facility drug safety reduces adverse drug events; population safety signals support national surveillance.<br>
+            <strong>AJImmunise:</strong> SDG 3.b — WHO-schedule vaccination management and VDS-NC certificates support equitable vaccine access and tracking.
+          </div>
+        </div>
+      </details>
+
+      <!-- 2 — Open Licensing -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">2</span>
+          <span class="ind-label">Open Licensing</span>
+          <span class="ind-badge ib-pass">✓ Met</span>
+        </summary>
+        <div class="ind-body">
+          <p>All AJ Commons components are licensed under the <strong>Apache License 2.0</strong>, an OSI-approved open source licence that permits free use, modification, distribution, and commercial use with attribution. No component uses a licence more restrictive than Apache 2.0.</p>
+          <div class="ind-evidence">
+            <strong>Evidence links (LICENSE file in each repo)</strong>
+            Each repository contains a LICENSE file at the root level. Apache 2.0 SPDX identifier: <code>Apache-2.0</code>. Licence text: <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">apache.org/licenses/LICENSE-2.0</a>. All dependencies carry compatible open licences (see Indicator 4).
+          </div>
+        </div>
+      </details>
+
+      <!-- 3 — Clear Ownership -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">3</span>
+          <span class="ind-label">Clear Ownership</span>
+          <span class="ind-badge ib-pass">✓ Met</span>
+        </summary>
+        <div class="ind-body">
+          <p>Owner: <strong>Akhester Technologies LLP</strong>, India. Copyright notices appear in all source files. This page (<code>ajcommons.org/#dpg</code>) is the publicly available ownership documentation submitted as evidence in each DPGA application.</p>
+          <p>Transition plan: upon Section 8 registration of <strong>AJ Health Commons</strong> (filing in progress), all AJ project trademarks and stewardship will transfer to the foundation entity. The Apache 2.0 licence remains unchanged and irrevocable regardless of ownership transfer.</p>
+          <div class="ind-evidence">
+            <strong>Evidence</strong>
+            Ownership statement above · Copyright headers in all source files · <a href="mailto:dpg@ajcommons.org">dpg@ajcommons.org</a> for DPGA reviewer enquiries · GitHub organisation: <a href="https://github.com/AKHester-Technologies" target="_blank">github.com/AKHester-Technologies</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- 4 — Platform Independence -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">4</span>
+          <span class="ind-label">Platform Independence</span>
+          <span class="ind-badge ib-pass">✓ Met</span>
+        </summary>
+        <div class="ind-body">
+          <p>All AJ Commons components run on <strong>Java 21 (OpenJDK)</strong> — a free, open runtime. No mandatory dependency introduces licence restrictions beyond Apache 2.0. The full dependency stack is open source.</p>
+          <div class="ind-evidence">
+            <strong>Dependency licence audit</strong>
+            <strong>HAPI FHIR JPA Server</strong> — Apache 2.0 · <strong>Spring Boot 3</strong> — Apache 2.0 · <strong>Spring Authorization Server</strong> — Apache 2.0 · <strong>PostgreSQL</strong> — PostgreSQL Licence (permissive, OSI-approved) · <strong>Flyway</strong> — Apache 2.0 · <strong>Docker / Kubernetes</strong> — Apache 2.0 · <strong>OpenJDK 21</strong> — GPL v2 + Classpath Exception (fully open, no restriction on use). No proprietary dependencies. Components can be deployed on any POSIX OS, any cloud, or air-gapped government infrastructure.
+          </div>
+        </div>
+      </details>
+
+      <!-- 5 — Documentation -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">5</span>
+          <span class="ind-label">Documentation</span>
+          <span class="ind-badge ib-pass">✓ Met</span>
+        </summary>
+        <div class="ind-body">
+          <p>Each component has technical documentation sufficient for a developer unfamiliar with the project to deploy and run it. Documentation includes: quickstart guide, architecture overview, configuration reference, API reference, and Docker Compose deployment.</p>
+          <div class="ind-evidence">
+            <strong>Documentation links</strong>
+            Platform documentation: <a href="https://docs.ajcommons.org" target="_blank">docs.ajcommons.org</a> (Docusaurus, migrating from open.akhester.com) · Component-level docs: /docs/auth-server · /docs/consent-manager · /docs/smart-client · /docs/immunisation · /docs/referral · Architecture: <a href="https://docs.ajcommons.org/architecture" target="_blank">docs.ajcommons.org/architecture</a> · Quickstart: <a href="https://docs.ajcommons.org/getting-started/quickstart" target="_blank">docs.ajcommons.org/getting-started/quickstart</a> · All repositories include README.md with setup instructions. Components marked "Coming Soon" have README.md with planned architecture; full docs published at launch.
+          </div>
+        </div>
+      </details>
+
+      <!-- 6 — Non-PII Data Extraction -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">6</span>
+          <span class="ind-label">Non-PII Data Extraction</span>
+          <span class="ind-badge ib-pass">✓ Met</span>
+        </summary>
+        <div class="ind-body">
+          <p>AJ Commons components that store health data support non-PII data extraction via standard open interfaces. Aggregate and anonymised data can be exported without exposing patient identity.</p>
+          <div class="ind-evidence">
+            <strong>Extraction mechanisms per component</strong>
+            <strong>AJBridge / AJMPI / AJHFR:</strong> FHIR Bulk Data Access (<code>$export</code> operation, NDJSON format) — extracts de-identified population-level records. FHIR Search API returns JSON/XML. Admin console CSV export for facility and provider lists.<br>
+            <strong>AJConsent:</strong> Consent statistics and audit summaries exported as FHIR AuditEvent bundles (JSON/XML). No PII required for aggregate compliance reporting.<br>
+            <strong>AJGuard:</strong> Population drug safety signal reports exported as FHIR MeasureReport resources (JSON). DHIS2 integration exports aggregate indicators via FHIR-to-DHIS2 bridge — no individual patient data in the export stream.<br>
+            <strong>AJImmunise:</strong> WHO VDS-NC certificate data available as FHIR Immunization resources. Aggregate vaccination coverage exported as FHIR MeasureReport for NIP reporting.
+          </div>
+        </div>
+      </details>
+
+      <!-- 7 — Privacy & Applicable Laws -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">7</span>
+          <span class="ind-label">Privacy &amp; Applicable Laws</span>
+          <span class="ind-badge ib-partial">⚑ In progress</span>
+        </summary>
+        <div class="ind-body">
+          <p>AJ Commons components are designed to comply with the following applicable privacy and data protection laws. Full privacy documentation is being completed as part of DPG submission preparation.</p>
+          <div class="ind-evidence">
+            <strong>Applicable laws &amp; frameworks</strong>
+            <strong>India:</strong> Digital Personal Data Protection Act 2023 (DPDPA) · Information Technology Act 2000 (amended 2008) · ABDM Health Data Management Policy<br>
+            <strong>International:</strong> GDPR (EU) 2016/679 — applicable for deployments in EU jurisdictions · HIPAA (US) — applicable for US deployments · WHO SMART Guidelines privacy framework<br><br>
+            <strong>2025 DPGA privacy requirements (mandatory)</strong><br>
+            <strong>Data minimisation:</strong> Components collect only the minimum PII required for clinical function. AJAuth collects clinician identity for token issuance only. AJMPI collects demographic data required for probabilistic matching — no biometrics stored.<br>
+            <strong>Consent mechanism:</strong> AJConsent implements FHIR R4/R5 Consent resource lifecycle with deny-by-default enforcement. Patients can view, grant, and revoke consent via self-service portal at any time.<br>
+            <strong>Data use transparency:</strong> Every data access event is logged as a FHIR AuditEvent (IHE ATNA). Patients can query their own audit log via the consent portal.<br>
+            <strong>Retention &amp; deletion:</strong> Configurable retention policies per deployment. FHIR <code>$delete</code> and <code>$purge</code> operations supported. No data retained beyond implementer-configured period.<br>
+            <strong>Access controls:</strong> PKCE S256 on every token request. RS256 JWT with JWKS rotation. Role-based scope enforcement via SmartScopeInterceptor. No bearer tokens in application logs.<br>
+            <strong>Privacy policy:</strong> <a href="mailto:dpg@ajcommons.org">Contact dpg@ajcommons.org</a> for full Privacy Policy document (being published at ajcommons.org/privacy).
+          </div>
+        </div>
+      </details>
+
+      <!-- 8 — Open Standards -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">8</span>
+          <span class="ind-label">Open Standards &amp; Best Practices</span>
+          <span class="ind-badge ib-pass">✓ Met</span>
+        </summary>
+        <div class="ind-body">
+          <p>All AJ Commons components are built exclusively on published, royalty-free international open standards. No proprietary protocols are used at any layer.</p>
+          <div class="ind-evidence">
+            <strong>Standards implemented</strong>
+            HL7 FHIR R4 / R5 · SMART App Launch v2.2 (HL7) · CDS Hooks 2.0 (HL7) · IHE ATNA (Audit Trail &amp; Node Authentication) · IHE PDQm / PIXm / PMIR (Patient Identity) · IHE MHD (Mobile Document Exchange) · IHE mCSD (Care Services Discovery) · OpenID Connect Core 1.0 · OAuth 2.0 RFC 6749 · PKCE RFC 7636 · RS256 JWT RFC 7519 · JWKS RFC 7517 · WHO VDS-NC (vaccination certificates) · WHO SMART Guidelines · NDJSON (Bulk Data) · HL7v2.x (MLLP/ATNA)
+          </div>
+        </div>
+      </details>
+
+      <!-- 9A — Data Privacy & Security -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">9A</span>
+          <span class="ind-label">Do No Harm — Data Privacy &amp; Security</span>
+          <span class="ind-badge ib-partial">⚑ In progress</span>
+        </summary>
+        <div class="ind-body">
+          <p>AJ Commons components that handle PII (AJBridge, AJMPI, AJConsent, AJHFR, AJGuard, AJImmunise) are designed with security and privacy controls at the architecture level, not as add-ons.</p>
+          <div class="ind-evidence">
+            <strong>Security model — per component</strong>
+            <strong>Encryption:</strong> TLS 1.3 enforced on all inter-service communication. PostgreSQL data at rest encrypted via filesystem or cloud-provider encryption (AES-256 recommended in deployment guide).<br>
+            <strong>Authentication:</strong> All FHIR endpoints protected by SMART token validation. No unauthenticated access to patient data.<br>
+            <strong>Authorisation:</strong> Least-privilege SMART scopes enforced at FHIR resource level via SmartScopeInterceptor. <code>patient/*.read</code> scopes limited to authenticated patient context.<br>
+            <strong>Audit:</strong> 138 ATNA audit sites across components. Every authentication event, consent decision, and data access written as immutable FHIR AuditEvent. HIPAA §164.312(b) compliant.<br>
+            <strong>PII in logs:</strong> Application logs contain zero patient identifiers. Token values are not logged. Audit events are written to a separate append-only store.<br>
+            <strong>Vulnerability disclosure:</strong> Security issues reported to <a href="mailto:security@ajcommons.org">security@ajcommons.org</a>. SECURITY.md present in each repository with responsible disclosure process.<br>
+            <strong>Full Data Protection Impact Assessment (DPIA):</strong> Being prepared — available to DPGA reviewers on request at <a href="mailto:dpg@ajcommons.org">dpg@ajcommons.org</a>.
+          </div>
+        </div>
+      </details>
+
+      <!-- 9B — Inappropriate Content -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">9B</span>
+          <span class="ind-label">Do No Harm — Inappropriate &amp; Illegal Content</span>
+          <span class="ind-badge ib-na">N/A</span>
+        </summary>
+        <div class="ind-body">
+          <p>AJ Commons components are <strong>developer infrastructure</strong> — FHIR servers, integration engines, identity registries, and clinical decision support APIs. They do not enable end-users to upload, store, or distribute user-generated content of any kind. There is no content upload surface, no social feature, no file sharing, and no mechanism by which inappropriate or illegal content could be submitted by users.</p>
+          <p>This indicator is not applicable to AJ Commons components. DPGA reviewers may confirm: no component provides a content submission interface, forum, media upload, or equivalent user-generated content pathway.</p>
+        </div>
+      </details>
+
+      <!-- 9C — Protection from Harassment -->
+      <details class="ind-item">
+        <summary class="ind-head">
+          <span class="ind-num">9C</span>
+          <span class="ind-label">Do No Harm — Protection from Harassment</span>
+          <span class="ind-badge ib-pass">✓ Met</span>
+        </summary>
+        <div class="ind-body">
+          <p>The AJ Commons contributor community is governed by a <strong>Code of Conduct</strong> based on the Contributor Covenant v2.1, present in every repository. Contributors and users have a clear process to report harassment and a designated point of contact for enforcement.</p>
+          <div class="ind-evidence">
+            <strong>Evidence</strong>
+            CODE_OF_CONDUCT.md present in all repositories · Enforcement contact: <a href="mailto:conduct@ajcommons.org">conduct@ajcommons.org</a> · Reporting process: file a confidential report via email; maintainers respond within 72 hours · Escalation path to AJ Health Commons board · GitHub's built-in content moderation also applies to all public repositories in the AKHester-Technologies organisation.
+          </div>
+        </div>
+      </details>
+
+    </div><!-- /ind-list -->
+
+    <!-- PROJECT STATUS TABLE -->
+    <h3 style="font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);margin-top:var(--space-lg);margin-bottom:var(--space-sm);">Application status by project</h3>
+    <div class="dpg-table">
+      <div class="dpg-table-head">
+        <div>Project</div>
+        <div>Licence</div>
+        <div>DPG Status</div>
+      </div>
+      <div class="dpg-row">
+        <div class="dpg-proj">AJBridge<span>HL7v2 → FHIR Gateway · SDG 3.8</span></div>
+        <div class="dpg-lic">Apache 2.0</div>
+        <div><span class="dpg-stat dpg-submitted">Submitting</span></div>
+      </div>
+      <div class="dpg-row">
+        <div class="dpg-proj">AJMPI<span>Master Patient Index · SDG 3.8</span></div>
+        <div class="dpg-lic">Apache 2.0</div>
+        <div><span class="dpg-stat dpg-submitted">Submitting</span></div>
+      </div>
+      <div class="dpg-row">
+        <div class="dpg-proj">AJConsent<span>Consent Manager · SDG 3.8</span></div>
+        <div class="dpg-lic">Apache 2.0</div>
+        <div><span class="dpg-stat dpg-pending">In review</span></div>
+      </div>
+      <div class="dpg-row">
+        <div class="dpg-proj">AJHFR<span>Facility Registry · SDG 3.8</span></div>
+        <div class="dpg-lic">Apache 2.0</div>
+        <div><span class="dpg-stat dpg-pending">In review</span></div>
+      </div>
+      <div class="dpg-row">
+        <div class="dpg-proj">AJGuard<span>Cross-Facility Safety · SDG 3.4 · 3.d</span></div>
+        <div class="dpg-lic">Apache 2.0</div>
+        <div><span class="dpg-stat dpg-preparing">Preparing</span></div>
+      </div>
+      <div class="dpg-row">
+        <div class="dpg-proj">AJAuth<span>SMART Auth Server · SDG 3.8</span></div>
+        <div class="dpg-lic">Apache 2.0</div>
+        <div><span class="dpg-stat dpg-preparing">Preparing</span></div>
+      </div>
+      <div class="dpg-row">
+        <div class="dpg-proj">AJConnect<span>CDS Hooks Engine · SDG 3.8</span></div>
+        <div class="dpg-lic">Apache 2.0</div>
+        <div><span class="dpg-stat dpg-preparing">Preparing</span></div>
+      </div>
+      <div class="dpg-row">
+        <div class="dpg-proj">AJImmunise<span>Vaccination App · SDG 3.b</span></div>
+        <div class="dpg-lic">Apache 2.0</div>
+        <div><span class="dpg-stat dpg-preparing">Preparing</span></div>
+      </div>
+      <div class="dpg-row">
+        <div class="dpg-proj">AJReferral<span>Cross-Facility Referral · SDG 3.8</span></div>
+        <div class="dpg-lic">Apache 2.0</div>
+        <div><span class="dpg-stat dpg-preparing">Preparing</span></div>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:12px;color:var(--ink-lt);">
+      DPG Standard v1.1.6 · <strong style="color:var(--ink);">Last reviewed: June 2026</strong> · Review process: <a href="https://digitalpublicgoods.net" target="_blank" style="color:var(--gold);">digitalpublicgoods.net</a> ·
+      DPG reviewer enquiries: <a href="mailto:dpg@ajcommons.org" style="color:var(--gold);">dpg@ajcommons.org</a>
+    </p>
+
+  </section>
+</div>
+
+<!-- ── CONTACT ────────────────────────────────────── -->
+<section id="contact" class="section">
+  <div class="section-eyebrow">Get in touch</div>
+  <h2 class="section-title">We'd like to hear from you</h2>
+  <p class="section-sub">Whether you're deploying in a hospital network, advising a Ministry of Health, or contributing code — reach out through the right channel.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      </div>
+      <h3>Government &amp; national health programmes</h3>
+      <p>Deploying a national HIE? Evaluating AJ Commons for a Ministry of Health implementation? We support government technical teams directly.</p>
+      <a href="mailto:gov@ajcommons.org">gov@ajcommons.org →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h3>Developers &amp; implementers</h3>
+      <p>Building on AJ Commons, contributing code, or deploying components? Start with the documentation or open a GitHub issue.</p>
+      <a href="https://docs.ajcommons.org" target="_blank">Documentation →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <h3>DPG, research &amp; partnerships</h3>
+      <p>DPGA reviewers, WHO technical teams, bilateral health funders, or research institutions — contact us about governance and partnership.</p>
+      <a href="mailto:dpg@ajcommons.org">dpg@ajcommons.org →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Security vulnerabilities</h3>
+      <p>Responsible disclosure of security issues in any AJ Commons component. We respond within 48 hours and publish CVEs after patching.</p>
+      <a href="mailto:security@ajcommons.org">security@ajcommons.org →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="17"/><line x1="17" y1="11" x2="23" y2="17"/></svg>
+      </div>
+      <h3>Code of Conduct reports</h3>
+      <p>Harassment, abuse, or conduct concerns in any AJ Commons space — GitHub, discussions, or events. Confidential. Maintainers respond within 72 hours.</p>
+      <a href="mailto:conduct@ajcommons.org">conduct@ajcommons.org →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-name">
+        <div class="nav-mark" style="background:rgba(255,255,255,0.12);width:28px;height:28px;border-radius:6px;flex-shrink:0;">
+          <svg viewBox="0 0 64 74" fill="none" style="width:17px;height:17px;">
+            <polygon points="32,0 64,18.4 64,55.4 32,73.7 0,55.4 0,18.4" fill="none" stroke="white" stroke-width="5" stroke-linejoin="round"/>
+            <circle cx="48" cy="9.2"  r="7" fill="white"/>
+            <circle cx="64" cy="36.8" r="7" fill="white"/>
+            <circle cx="48" cy="64.5" r="7" fill="white"/>
+            <circle cx="16" cy="64.5" r="7" fill="white"/>
+            <circle cx="0"  cy="36.8" r="7" fill="white"/>
+            <circle cx="16" cy="9.2"  r="7" fill="white"/>
+            <line x1="32" y1="36.8" x2="48" y2="9.2"  stroke="white" stroke-width="2.5" opacity="0.35"/>
+            <line x1="32" y1="36.8" x2="64" y2="36.8" stroke="white" stroke-width="2.5" opacity="0.35"/>
+            <line x1="32" y1="36.8" x2="48" y2="64.5" stroke="white" stroke-width="2.5" opacity="0.35"/>
+            <line x1="32" y1="36.8" x2="16" y2="64.5" stroke="white" stroke-width="2.5" opacity="0.35"/>
+            <line x1="32" y1="36.8" x2="0"  y2="36.8" stroke="white" stroke-width="2.5" opacity="0.35"/>
+            <line x1="32" y1="36.8" x2="16" y2="9.2"  stroke="white" stroke-width="2.5" opacity="0.35"/>
+            <circle cx="32" cy="36.8" r="10"  fill="white"/>
+            <circle cx="32" cy="36.8" r="5"   fill="rgba(255,255,255,0.25)"/>
+          </svg>
+        </div>
+        AJ Commons
+      </div>
+      <p>Open source foundation for FHIR health data infrastructure. Apache 2.0. Digital Public Good candidate. Stewarded by Akhester Technologies LLP.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Projects</h4>
+      <ul>
+        <li><a href="#projects">AJBridge — HL7v2 Gateway</a></li>
+        <li><a href="#projects">AJMPI — Patient Index</a></li>
+        <li><a href="#projects">AJConsent — Consent</a></li>
+        <li><a href="#projects">AJHFR — Facility Registry</a></li>
+        <li><a href="#projects">AJGuard — Safety</a></li>
+        <li><a href="#projects">AJAuth — SMART Auth</a></li>
+        <li><a href="#projects">AJConnect — CDS Hooks</a></li>
+        <li><a href="#projects">AJImmunise — Vaccination</a></li>
+        <li><a href="#projects">AJReferral — Referrals</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="https://docs.ajcommons.org">Technical documentation</a></li>
+        <li><a href="https://github.com/AKHester-Technologies">GitHub organisation</a></li>
+        <li><a href="https://github.com/AKHester-Technologies/aj-commons/discussions">Community discussions</a></li>
+        <li><a href="#dpg">DPG status page</a></li>
+        <li><a href="#governance">Governance</a></li>
+        <li><a href="https://platform.akhester.com">Commercial platform ↗</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Standards</h4>
+      <ul>
+        <li><a href="https://hl7.org/fhir/smart-app-launch/" target="_blank">SMART App Launch v2.2</a></li>
+        <li><a href="https://hl7.org/fhir/R4/" target="_blank">HL7 FHIR R4</a></li>
+        <li><a href="https://profiles.ihe.net/ITI/ATNA/" target="_blank">IHE ATNA</a></li>
+        <li><a href="https://www.digitalpublicgoods.net" target="_blank">DPG Standard</a></li>
+        <li><a href="https://ohie.org" target="_blank">OpenHIE Community</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AJ Health Commons / Akhester Technologies LLP · Apache License 2.0</span>
+    <span>
+      HL7®, FHIR® and the FHIR Flame Design® are registered trademarks of Health Level Seven International. Their use does not constitute endorsement by HL7. ·
+      <a href="mailto:dpg@ajcommons.org">dpg@ajcommons.org</a> ·
+      <a href="mailto:security@ajcommons.org">security@ajcommons.org</a> ·
+      <a href="mailto:conduct@ajcommons.org">conduct@ajcommons.org</a> ·
+      <a href="https://github.com/AKHester-Technologies" target="_blank">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
