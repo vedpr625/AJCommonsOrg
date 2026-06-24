@@ -104,8 +104,8 @@
       "worksFor": {
         "@id": "https://ajcommons.org/#organization"
       },
-      "description": "Dentist with MBA in Health Informatics. Co-Founder & CEO of Akhester Technologies LLP. Expert in HL7 FHIR, openEHR, and digital health interoperability.",
-      "knowsAbout": ["HL7 FHIR", "openEHR", "NDHB India", "Health Informatics", "Digital Health Interoperability", "EMR", "Health Information Exchange"],
+      "description": "Dentist with MBA in Health Informatics. Co-Founder & CEO of dChikitsa. Co-Founder of Akhester Technologies LLP. Expert in HL7 FHIR, openEHR, and digital health interoperability.",
+      "knowsAbout": ["HL7 FHIR", "openEHR", "ABDM", "Health Informatics", "Digital Health Interoperability", "EMR", "Health Information Exchange"],
       "sameAs": ["https://www.linkedin.com/in/dr-akriti-jamwal-4b149b124/"]
     },
     {
@@ -301,6 +301,8 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
+  flex-shrink: 1;
 }
 .nav-mark {
   width: 28px;
@@ -318,11 +320,13 @@ ul { list-style: none; }
   font-size: 17px;
   color: var(--ink);
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 .nav-links {
   display: flex;
   align-items: center;
   gap: var(--space-md);
+  flex-shrink: 0;
 }
 .nav-links a {
   font-size: 13.5px;
@@ -1111,29 +1115,173 @@ footer {
 }
 
 /* ── RESPONSIVE ──────────────────────────────────── */
+
+/* ── 900px — tablet landscape ── */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
+  /* nav */
+  .nav-links a:not(.nav-gh) { display: none; }
+  .nav-links { gap: 12px; }
+
+  /* hero */
+  .hero { grid-template-columns: 1fr; gap: var(--space-md); }
   .hero-aside { display: none; }
+  .hero h1 { max-width: 100%; }
+  .hero-body { max-width: 100%; }
   .mission-inner { grid-template-columns: 1fr; gap: var(--space-md); }
-  .ledger-head, .ledger-row { grid-template-columns: 160px 1fr; }
-  .ledger-head .col-status,
-  .ledger-head .col-links,
-  .ledger-row .proj-status,
-  .ledger-row .proj-links { display: none; }
-  .standards-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* projects ledger — hide status/links columns */
+  .ledger-head, .ledger-row { grid-template-columns: 180px 1fr; }
+  .ledger-head .col-status, .ledger-head .col-links,
+  .ledger-row .proj-status, .ledger-row .proj-links { display: none; }
+
+  /* standards section — 2-col rows */
+  .standards-bg > .section > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  .standards-bg > .section > div[style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* governance, contact */
   .governance-grid { grid-template-columns: 1fr; }
   .dpg-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+
+  /* footer */
   .footer-inner { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+
+  /* SDG coverage table — hide 2 SDG columns, keep component + 3.8 */
+  .sdg-table-row, .sdg-table-head {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+  .sdg-col-3b, .sdg-col-3d { display: none; }
+
+  /* DPG 2-col → 1-col */
+  .dpg-table-2col { grid-template-columns: 1fr; }
+  .dpg-col:first-of-type { border-right: none; border-bottom: 1px solid #EDE5B0; }
 }
-@media (max-width: 600px) {
-  .nav-links .nav-gh span { display: none; }
+
+/* ── 700px — tablet portrait ── */
+@media (max-width: 700px) {
+  /* nav — keep logo + github only */
+  .nav-inner { height: 54px; }
+  .nav-name { font-size: 15px; }
+
+  /* hero */
+  .hero { padding: 40px var(--space-sm) 32px; }
+  .hero h1 { font-size: clamp(28px, 7vw, 42px); }
+  .hero-body { font-size: 15px; }
+
+  /* section padding */
   .section { padding: var(--space-lg) var(--space-sm); }
-  .standards-grid { grid-template-columns: 1fr; }
-  .ledger-row { padding: 16px; }
+
+  /* ledger */
+  .ledger { border-radius: 8px; }
+  .ledger-head { display: none; }
+  .ledger-row {
+    grid-template-columns: 1fr !important;
+    padding: 16px;
+    gap: 8px;
+  }
+  .ledger-row .col-status, .ledger-row .proj-status,
+  .ledger-row .col-links, .ledger-row .proj-links { display: block; }
+  .proj-name { font-size: 14px; }
+  .proj-desc { font-size: 13px; }
+
+  /* standards — all 1 col */
+  .standards-bg > .section > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* HIE diagram wrapper */
+  .hie-diagram-wrap { padding: 16px 12px 12px; }
+
+  /* SDG coverage table — 2 cols only (component + 3.8) */
+  div[style*="grid-template-columns:200px 1fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* hide SDG 3.4, 3.b, 3.d columns in SDG table */
+  div[style*="grid-template-columns:200px 1fr 1fr 1fr 1fr"] > div:nth-child(3),
+  div[style*="grid-template-columns:200px 1fr 1fr 1fr 1fr"] > div:nth-child(4),
+  div[style*="grid-template-columns:200px 1fr 1fr 1fr 1fr"] > div:nth-child(5) { display: none; }
+
+  /* footer */
   .footer-inner { grid-template-columns: 1fr; }
-  .hero { padding: var(--space-lg) var(--space-sm) var(--space-md); }
+  .footer-products { display: none; }
+
+  /* governance */
+  .gov-rules { gap: 10px; }
 }
+
+/* ── 480px — phone landscape / large phone ── */
+@media (max-width: 480px) {
+  /* nav — prevent logo text wrapping */
+  .nav-name { font-size: 14px; letter-spacing: 0; white-space: nowrap; }
+  .nav-mark { width: 24px; height: 24px; }
+  .nav-links .nav-gh { padding: 6px 10px; }
+  .nav-links .nav-gh span { display: none; }
+  .nav-inner { gap: 8px; }
+
+  /* hero */
+  .hero { padding: 32px 16px 24px; }
+  .hero-eyebrow { margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(24px, 8vw, 36px); margin-bottom: 14px; }
+  .hero-body { font-size: 14.5px; line-height: 1.65; }
+  .hero-actions { gap: 10px; }
+  .btn-primary, .btn-secondary { font-size: 13.5px; padding: 10px 16px; }
+
+  /* section headings */
+  .section-title { font-size: clamp(24px, 6vw, 36px); }
+  .section-sub { font-size: 14.5px; }
+
+  /* dateline */
+  .dateline-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .dateline-tag { border-right: none; padding-right: 0; margin-right: 0; }
+  .dateline-countries { flex-wrap: wrap; row-gap: 4px; }
+  .country-name { font-size: 13px; }
+  .country-sep { margin: 0 8px; }
+
+  /* about section founder card */
+  .founder-card-inner { flex-direction: column !important; align-items: flex-start !important; }
+
+  /* contact */
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-card { padding: 18px 16px; }
+
+  /* DPG table */
+  .dpg-table-2col { grid-template-columns: 1fr; }
+  .dpg-table-head { grid-template-columns: 1fr 100px !important; }
+  .dpg-row { grid-template-columns: 1fr 100px !important; }
+  .dpg-row > div:nth-child(2) { display: none; } /* hide licence col */
+  .dpg-proj { font-size: 12.5px; }
+  .dpg-proj span { font-size: 10.5px; }
+
+  /* SDG table — stack to pure list */
+  div[style*="grid-template-columns:200px 1fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  div[style*="grid-template-columns:200px 1fr 1fr 1fr 1fr"] > div { display: block !important; }
+  .sdg-coverage-legend { flex-wrap: wrap; gap: 10px; }
+  .sdg-coverage-legend span:last-child { display: none; }
+
+  /* HIE diagram — let SVG scroll horizontally */
+  .hie-diagram-wrap { overflow-x: auto; padding: 12px 8px; }
+  .hie-diagram-wrap svg { min-width: 480px; }
+}
+
+/* ── 380px — small phone ── */
+@media (max-width: 380px) {
+  .nav-name { font-size: 13px; }
+  .nav-mark { width: 22px; height: 22px; border-radius: 5px; }
+  .hero h1 { font-size: 22px; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .section { padding: var(--space-md) 14px; }
+  .ledger-row { padding: 14px; }
+  .dpg-table-head, .dpg-row { grid-template-columns: 1fr !important; }
+  .dpg-row > div:nth-child(2) { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
 }
@@ -1444,7 +1592,7 @@ footer {
       <span style="font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.75);">National HIE — how data flows through AJ Commons</span>
       <span style="font-size:11px;color:rgba(255,255,255,.5);">From hospital HIS to population health</span>
     </div>
-    <div style="padding:28px 28px 18px;background:#FAFBFC;">
+    <div class="hie-diagram-wrap" style="padding:28px 28px 18px;background:#FAFBFC;">
       <svg width="100%" viewBox="0 0 680 620" role="img" xmlns="http://www.w3.org/2000/svg" style="display:block;">
         <title>AJ Commons national HIE architecture — data flow diagram</title>
         <desc>Five-layer architecture: Hospital HIS feeds AJBridge which feeds the identity and consent layer (AJMPI, AJHFR, AJConsent, AJAuth), then HAPI FHIR shared health record, then clinical intelligence (AJGuard, AJConnect), then DHIS2 population health output.</desc>
