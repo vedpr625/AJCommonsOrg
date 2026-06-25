@@ -1065,6 +1065,232 @@ ul { list-style: none; }
 .contact-card a:hover { opacity: 0.75; }
 
 /* ── FOOTER ──────────────────────────────────────── */
+
+/* ── COMMUNITY SECTION ── */
+.community-section {
+  background: #FFFFFF;
+  padding: 80px 0;
+  border-top: 1px solid var(--rule);
+}
+.community-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.community-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+.community-eyebrow {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+.community-h2 {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+}
+.community-h2 em {
+  font-style: italic;
+  color: var(--green);
+}
+.community-sub {
+  font-size: 15px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  margin-top: 0;
+}
+.community-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: background 0.12s;
+}
+.community-cta:hover { background: var(--green-md); }
+.community-cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--rule);
+  color: var(--ink-mid);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 20px;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: border-color 0.12s, color 0.12s;
+  background: #fff;
+}
+.community-cta-ghost:hover { border-color: var(--green); color: var(--green); }
+
+/* Threads widget */
+.community-threads {
+  background: var(--stone);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.threads-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+.threads-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-lt);
+}
+.threads-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+}
+.threads-link:hover { text-decoration: underline; }
+.thread-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  background: #fff;
+  transition: background 0.1s;
+  align-items: start;
+}
+.thread-item:last-child { border-bottom: none; }
+.thread-item:hover { background: var(--green-lt); }
+.thread-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.thread-meta {
+  font-size: 12px;
+  color: var(--ink-lt);
+  line-height: 1.4;
+}
+.thread-cat {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-top: 3px;
+  letter-spacing: 0.02em;
+}
+.thread-cat.tech     { background: #EBF5F0; color: #1B5E45; border: 1px solid #9EC9B8; }
+.thread-cat.country  { background: #FDF6E3; color: #8A6914; border: 1px solid #D4C47A; }
+.thread-cat.research { background: #f5f3ff; color: #5b21b6; border: 1px solid #ddd6fe; }
+.thread-cat.show     { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+
+/* Category cards */
+.community-cats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 40px;
+}
+.cat-card {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--green-lt);
+  border-radius: 6px;
+  padding: 20px 18px;
+  text-decoration: none;
+  transition: border-color 0.12s, box-shadow 0.12s, border-top-color 0.12s;
+  display: block;
+}
+.cat-card:hover {
+  border-color: #9EC9B8;
+  border-top-color: var(--green);
+  box-shadow: 0 2px 12px rgba(27,94,69,0.08);
+}
+.cat-icon {
+  margin-bottom: 12px;
+  display: block;
+  color: var(--green);
+}
+.cat-icon svg { display: block; }
+.cat-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.cat-desc {
+  font-size: 12.5px;
+  color: var(--ink-mid);
+  line-height: 1.55;
+}
+
+/* Stats row */
+.community-stats {
+  display: flex;
+  gap: 0;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  flex-wrap: wrap;
+}
+.comm-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-right: 40px;
+  border-right: 1px solid var(--rule);
+  margin-right: 40px;
+}
+.comm-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.comm-stat-n {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--ink);
+  line-height: 1;
+}
+.comm-stat-l {
+  font-size: 11.5px;
+  color: var(--ink-lt);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .community-header { grid-template-columns: 1fr; gap: 28px; }
+  .community-cats { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .community-section { padding: 56px 0; }
+  .community-cats { grid-template-columns: 1fr; }
+  .community-stats { gap: 20px; }
+  .comm-stat { border-right: none; padding-right: 0; margin-right: 0; margin-bottom: 16px; }
+}
+
 footer {
   border-top: 1px solid var(--rule);
   background: var(--ink);
@@ -1333,7 +1559,8 @@ footer {
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#governance">Governance</a>
-      <a href="#dpg">DPG</a>
+      <a href="#community">Community</a>
+          <a href="#dpg">DPG</a>
       <a href="#contact">Contact</a>
       <a href="https://github.com/ajcommons" target="_blank" rel="noopener" class="nav-gh">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -1430,6 +1657,7 @@ footer {
 </div>
 
 <!-- ── ABOUT ───────────────────────────────────────── -->
+
 <section id="about" style="background:var(--white);border-bottom:1px solid var(--rule);">
   <div style="max-width:var(--max);margin:0 auto;padding:var(--space-lg) var(--space-md);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);align-items:center;">
     <div>
@@ -1468,36 +1696,7 @@ footer {
   </div>
 </section>
 
-<!-- ── MISSION ────────────────────────────────────── -->
-<div class="mission">
-  <div class="mission-inner">
-    <div>
-      <div class="mission-quote">
-        Health data should flow as freely as health itself — across facilities, across systems, across borders — with the patient's consent and under open governance.
-      </div>
-    </div>
-    <div class="mission-pillars">
-      <div class="pillar">
-        <div class="pillar-title">Open by default</div>
-        <div class="pillar-body">Every component Apache 2.0 licensed. No proprietary lock-in, no call-home telemetry, no usage fees. Deploy on your own infrastructure or air-gapped government cloud.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-title">Standards first</div>
-        <div class="pillar-body">Built entirely on HL7 FHIR R4/R5, SMART App Launch v2.2, IHE profiles, and WHO SMART Guidelines. No proprietary protocols — interoperable with every standards-compliant system.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-title">Built for LMIC scale</div>
-        <div class="pillar-body">Designed for national digital health deployments in low- and middle-income countries — low resource requirements, DHIS2 integration, offline-capable nodes, PEPFAR reporting built in.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-title">Openly governed</div>
-        <div class="pillar-body">Community Code of Conduct, public roadmap, open contribution process. Steered by AJ Health Commons toward Digital Public Goods certification under the DPGA Standard.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── PROJECTS ───────────────────────────────────── -->
+<!-- ── PROJECTS ─────────────────────────────────────── -->
 <section id="projects" class="section">
   <div class="section-eyebrow">Components</div>
   <h2 class="section-title">Nine independently deployable components</h2>
@@ -1739,114 +1938,7 @@ footer {
   </div>
 </section>
 
-<!-- ── STANDARDS ──────────────────────────────────── -->
-<div class="standards-bg">
-  <section class="section" style="padding-top:var(--space-lg);padding-bottom:var(--space-lg);">
-    <div class="section-eyebrow">Standards alignment</div>
-    <h2 class="section-title">Built on open standards, not proprietary protocols</h2>
-    <p class="section-sub" style="margin-bottom:var(--space-lg);">Every component implements published international standards. No vendor lock-in. Interoperable with any conformant system.</p>
-
-    <!-- Row 1: HL7 + IHE -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
-
-      <!-- HL7 block -->
-      <div style="background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:4px;">HL7 International</div>
-        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:12px;">FHIR® · SMART® · CDS Hooks · HL7v2 · IPS</div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-          <span class="badge green">FHIR® R4</span>
-          <span class="badge green">FHIR® R5</span>
-          <span class="badge green">SMART® App Launch v2.2</span>
-          <span class="badge green">CDS Hooks 2.0</span>
-          <span class="badge green">IPS — Patient/$summary</span>
-          <span class="badge green">FHIR Bulk Data $export</span>
-          <span class="badge green">FHIR Subscriptions (rest-hook)</span>
-          <span class="badge green">HL7v2 ADT · ORU · ORM · OML · MDM · RDE · SIU</span>
-          <span class="badge green">MLLP — 7 ports / 7 message types</span>
-          <span class="badge green">QBP Q22 / RSP K22 (PDQ v2)</span>
-        </div>
-        <div style="font-size:12px;color:var(--ink-lt);line-height:1.65;">FHIR R4 and R5 resource types across all components. SMART App Launch v2.2 with PKCE S256 enforced. CDS Hooks 2.0 for real-time clinical decision support (AJGuard fires on medication-prescribe, patient-view, encounter-discharge, order-sign). IPS <code style="font-size:11px;">Patient/$summary</code> with 10-section parallel assembly and Redis cache. FHIR Bulk Data <code style="font-size:11px;">$export</code> for population-level reporting. Full FHIR rest-hook subscription engine (13 criteria types). HL7v2 MLLP on 7 dedicated ports — ADT A01-A40, ORU R01, ORM O01/OML O21, MDM T02, QBP Q22, RDE O11, SIU S12-S17.</div>
-      </div>
-
-      <!-- IHE block -->
-      <div style="background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1e40af;margin-bottom:4px;">IHE — Integrating the Healthcare Enterprise</div>
-        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:12px;">ITI · RAD · BALP — 16 transactions</div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · ATNA (ITI-8, ITI-20)</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · BALP (FHIR AuditEvent)</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · PDQm (ITI-78)</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · PIXm (ITI-83)</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · PMIR (ITI-93, ITI-94)</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · MHD (ITI-65, 66, 67, 68)</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · MHD (ITI-105, ITI-106)</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · mCSD (ITI-90)</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · IUA (Internet User Auth)</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ITI · XDS.b</span>
-          <span style="font-size:11px;font-weight:600;background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;padding:3px 8px;border-radius:4px;white-space:nowrap;">RAD · DICOM DIMSE</span>
-        </div>
-        <div style="font-size:12px;color:var(--ink-lt);line-height:1.65;">Full IHE ITI profile implementation. ATNA audit on 138 sites across all services — RFC 5425 TLS syslog (ITI-20) to syslog-ng plus FHIR R4 AuditEvent POST (IHE BALP) to HAPI. MHD v4.2.3 complete — all six transactions including ITI-105 Simplified Publish and ITI-106 Generate Metadata from CDA. PMIR ITI-93/94 with async fan-out to downstream subscribers. IUA wraps SMART on FHIR token validation. mCSD ITI-90 with 6-hour facility cache. XDS.b document sharing. DICOM DIMSE for radiology. OpenHIM mediator-compatible via self-registration protocol.</div>
-      </div>
-    </div>
-
-    <!-- Row 2: Terminology + Infrastructure + National -->
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
-
-      <!-- Clinical Terminology block -->
-      <div style="background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5b21b6;margin-bottom:4px;">Clinical Terminology</div>
-        <div style="font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:10px;">SNOMED CT · LOINC · ICD · RxNorm</div>
-        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
-          <span style="font-size:11px;font-weight:600;background:#f5f3ff;color:#5b21b6;border:1px solid #ddd6fe;padding:3px 8px;border-radius:4px;white-space:nowrap;">SNOMED CT (Snowstorm)</span>
-          <span style="font-size:11px;font-weight:600;background:#f5f3ff;color:#5b21b6;border:1px solid #ddd6fe;padding:3px 8px;border-radius:4px;white-space:nowrap;">LOINC</span>
-          <span style="font-size:11px;font-weight:600;background:#f5f3ff;color:#5b21b6;border:1px solid #ddd6fe;padding:3px 8px;border-radius:4px;white-space:nowrap;">ICD-10 / ICD-11</span>
-          <span style="font-size:11px;font-weight:600;background:#f5f3ff;color:#5b21b6;border:1px solid #ddd6fe;padding:3px 8px;border-radius:4px;white-space:nowrap;">RxNorm (NLM API)</span>
-          <span style="font-size:11px;font-weight:600;background:#f5f3ff;color:#5b21b6;border:1px solid #ddd6fe;padding:3px 8px;border-radius:4px;white-space:nowrap;">UCUM</span>
-          <span style="font-size:11px;font-weight:600;background:#f5f3ff;color:#5b21b6;border:1px solid #ddd6fe;padding:3px 8px;border-radius:4px;white-space:nowrap;">FHIR $expand · $translate · $validate-code</span>
-        </div>
-        <div style="font-size:12px;color:var(--ink-lt);line-height:1.65;">Snowstorm SNOMED CT server with ECL queries and subsumption. LOINC code binding on FHIR ValueSets with local lab code overlay (28 Sri Lanka codes). ICD-10 ↔ SNOMED CT cross-maps. RxNorm NDC normalisation via NLM API — used by AJGuard for cross-facility drug-drug interaction checking. UCUM units on all Observation resources. Federated terminology federation: local → Snowstorm → NLM.</div>
-      </div>
-
-      <!-- Infrastructure + openEHR block -->
-      <div style="background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0e7490;margin-bottom:4px;">Infrastructure · openEHR · Security</div>
-        <div style="font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:10px;">Apache Camel · openEHR · mTLS · Redis</div>
-        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
-          <span style="font-size:11px;font-weight:600;background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc;padding:3px 8px;border-radius:4px;white-space:nowrap;">Apache Camel (routing)</span>
-          <span style="font-size:11px;font-weight:600;background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc;padding:3px 8px;border-radius:4px;white-space:nowrap;">openEHR RM / EHRBase / AQL</span>
-          <span style="font-size:11px;font-weight:600;background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc;padding:3px 8px;border-radius:4px;white-space:nowrap;">DICOM DIMSE + STOW-RS</span>
-          <span style="font-size:11px;font-weight:600;background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc;padding:3px 8px;border-radius:4px;white-space:nowrap;">mTLS (client cert)</span>
-          <span style="font-size:11px;font-weight:600;background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc;padding:3px 8px;border-radius:4px;white-space:nowrap;">OAuth 2.0 / PKCE S256</span>
-          <span style="font-size:11px;font-weight:600;background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc;padding:3px 8px;border-radius:4px;white-space:nowrap;">RS256 JWT / JWKS rotation</span>
-          <span style="font-size:11px;font-weight:600;background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc;padding:3px 8px;border-radius:4px;white-space:nowrap;">Redis (IPS cache)</span>
-          <span style="font-size:11px;font-weight:600;background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc;padding:3px 8px;border-radius:4px;white-space:nowrap;">Prometheus · Grafana</span>
-        </div>
-        <div style="font-size:12px;color:var(--ink-lt);line-height:1.65;">Apache Camel drives all 7 MLLP routes and FHIR gateway routing in AJBridge. openEHR archetypes and operational templates via EHRBase with AQL. DICOM DIMSE for PACS and STOW-RS for web-based imaging. mTLS for high-security hospital integrations. Redis-backed IPS cache (&lt;100ms warm). 20+ Prometheus counters per service, 4 Grafana dashboards, 11 Alertmanager rules.</div>
-      </div>
-
-      <!-- National / WHO block -->
-      <div style="background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#92400e;margin-bottom:4px;">National · WHO · DPG · Observability</div>
-        <div style="font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:10px;">NDHB · WHO · DHIS2 · Apache 2.0</div>
-        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
-          <span style="font-size:11px;font-weight:600;background:#fffbeb;color:#92400e;border:1px solid #fde68a;padding:3px 8px;border-radius:4px;white-space:nowrap;">India NDHB 2019</span>
-          <span style="font-size:11px;font-weight:600;background:#fffbeb;color:#92400e;border:1px solid #fde68a;padding:3px 8px;border-radius:4px;white-space:nowrap;">WHO SMART Guidelines</span>
-          <span style="font-size:11px;font-weight:600;background:#fffbeb;color:#92400e;border:1px solid #fde68a;padding:3px 8px;border-radius:4px;white-space:nowrap;">WHO VDS-NC (vaccination)</span>
-          <span style="font-size:11px;font-weight:600;background:#fffbeb;color:#92400e;border:1px solid #fde68a;padding:3px 8px;border-radius:4px;white-space:nowrap;">DHIS2 direct integration</span>
-          <span style="font-size:11px;font-weight:600;background:#fffbeb;color:#92400e;border:1px solid #fde68a;padding:3px 8px;border-radius:4px;white-space:nowrap;">ONC HTI-1 / Inferno</span>
-          <span style="font-size:11px;font-weight:600;background:#fffbeb;color:#92400e;border:1px solid #fde68a;padding:3px 8px;border-radius:4px;white-space:nowrap;">PEPFAR reporting</span>
-          <span style="font-size:11px;font-weight:600;background:#fffbeb;color:#92400e;border:1px solid #fde68a;padding:3px 8px;border-radius:4px;white-space:nowrap;">DPG Standard v1.1.6</span>
-          <span style="font-size:11px;font-weight:600;background:#fffbeb;color:#92400e;border:1px solid #fde68a;padding:3px 8px;border-radius:4px;white-space:nowrap;">Country-agnostic OID config</span>
-          <span style="font-size:11px;font-weight:600;background:#fffbeb;color:#92400e;border:1px solid #fde68a;padding:3px 8px;border-radius:4px;white-space:nowrap;">Apache 2.0</span>
-        </div>
-        <div style="font-size:12px;color:var(--ink-lt);line-height:1.65;">India NDHB 2019 aligned. WHO SMART Guidelines for computable clinical guidance. WHO VDS-NC vaccination certificates with QR codes. DHIS2 direct integration via <code style="font-size:11px;">Dhis2SurveillanceMediator</code> — 5 notifiable diseases configured, LOINC→DHIS2 data element mapping. Country-agnostic deployment: all OIDs, MRN systems, national ID systems, and clinical thresholds configured via <code style="font-size:11px;">deployment.yml</code> — same binary, different config for Sri Lanka, Kenya, Nepal, Bangladesh.</div>
-      </div>
-    </div>
-
-  </section>
-</div>
-
-<!-- ── GOVERNANCE ─────────────────────────────────── -->
+<!-- ── GOVERNANCE ───────────────────────────────────── -->
 <section id="governance" class="section">
   <div class="section-eyebrow">Governance</div>
   <h2 class="section-title">Open governance, not corporate control</h2>
@@ -1903,37 +1995,145 @@ footer {
   </div>
 </section>
 
-<!-- ── COMMUNITY ──────────────────────────────────── -->
-<div style="background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
-  <div style="max-width:var(--max);margin:0 auto;padding:var(--space-lg) var(--space-md);">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden;">
-      <div style="background:var(--white);padding:24px 22px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">GitHub</div>
-        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:6px;">Source code</div>
-        <div style="font-size:13px;color:var(--ink-lt);line-height:1.55;margin-bottom:12px;">Browse repos, open issues, submit pull requests, and follow releases.</div>
-        <a href="https://github.com/ajcommons" target="_blank" style="font-size:12.5px;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:4px;">github.com/ajcommons →</a>
+<!-- ── COMMUNITY ────────────────────────────────────── -->
+<section class="community-section" id="community">
+  <div class="community-inner">
+
+    <div class="community-header">
+      <div>
+        <div class="community-eyebrow">Community</div>
+        <h2 class="community-h2">
+          Where health informatics<br>
+          <em>practitioners meet</em>
+        </h2>
       </div>
-      <div style="background:var(--white);padding:24px 22px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">Discussions</div>
-        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:6px;">Community forum</div>
-        <div style="font-size:13px;color:var(--ink-lt);line-height:1.55;margin-bottom:12px;">Ask questions, share implementations, propose features, and engage with the roadmap.</div>
-        <a href="https://github.com/ajcommons/aj-commons/discussions" target="_blank" style="font-size:12.5px;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:4px;">GitHub Discussions →</a>
-      </div>
-      <div style="background:var(--white);padding:24px 22px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">FHIR Chat</div>
-        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:6px;">HL7 community</div>
-        <div style="font-size:13px;color:var(--ink-lt);line-height:1.55;margin-bottom:12px;">We participate in HL7 FHIR Chat — find us in the SMART App Launch channel.</div>
-        <a href="https://chat.fhir.org/#narrow/channel/179170-smart" target="_blank" style="font-size:12.5px;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:4px;">chat.fhir.org →</a>
-      </div>
-      <div style="background:var(--white);padding:24px 22px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">Stay updated</div>
-        <div style="font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:6px;">Release notices</div>
-        <div style="font-size:13px;color:var(--ink-lt);line-height:1.55;margin-bottom:12px;">Watch the GitHub organisation for new releases, security patches, and DPG status updates.</div>
-        <a href="https://github.com/ajcommons" target="_blank" style="font-size:12.5px;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:4px;">Watch on GitHub →</a>
+      <div>
+        <p class="community-sub">
+          A space for developers, MoH teams, researchers, NGOs, and community health workers
+          to ask questions, share deployments, and shape the direction of open health infrastructure.
+          No GitHub account required.
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://community.ajcommons.org" class="community-cta" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            Join the forum
+          </a>
+          <a href="https://community.ajcommons.org" class="community-cta-ghost" target="_blank" rel="noopener">
+            Browse discussions →
+          </a>
+        </div>
       </div>
     </div>
+
+    <!-- Latest threads — populated by Discourse embed JS in production -->
+    <div class="community-threads">
+      <div class="threads-header">
+        <span class="threads-label">Latest discussions</span>
+        <a href="https://community.ajcommons.org" class="threads-link" target="_blank" rel="noopener">See all →</a>
+      </div>
+      <a class="thread-item" href="https://community.ajcommons.org" target="_blank" rel="noopener">
+        <div>
+          <div class="thread-title">Deploying AJBridge with Bahmni on a 2-core VM — memory tips?</div>
+          <div class="thread-meta">asked by ravi_krishna · 12 replies · Technical Q&amp;A</div>
+        </div>
+        <span class="thread-cat tech">Technical</span>
+      </a>
+      <a class="thread-item" href="https://community.ajcommons.org" target="_blank" rel="noopener">
+        <div>
+          <div class="thread-title">Kenya KHIS → DHIS2 mapping — sharing our LOINC lookup table</div>
+          <div class="thread-meta">shared by amina_ochieng · 7 replies · Country deployments</div>
+        </div>
+        <span class="thread-cat country">Country</span>
+      </a>
+      <a class="thread-item" href="https://community.ajcommons.org" target="_blank" rel="noopener">
+        <div>
+          <div class="thread-title">DISHA consent model vs GDPR — what's the overlap for a dual-deploy?</div>
+          <div class="thread-meta">asked by priya_m · 5 replies · Standards &amp; IHE</div>
+        </div>
+        <span class="thread-cat research">Research</span>
+      </a>
+      <a class="thread-item" href="https://community.ajcommons.org" target="_blank" rel="noopener">
+        <div>
+          <div class="thread-title">We went live with AJConsent at a 450-bed hospital in Colombo</div>
+          <div class="thread-meta">posted by sachith_de · 3 replies · Show &amp; tell</div>
+        </div>
+        <span class="thread-cat show">Show &amp; tell</span>
+      </a>
+      <a class="thread-item" href="https://community.ajcommons.org" target="_blank" rel="noopener">
+        <div>
+          <div class="thread-title">openEHR AQL and FHIR — is there a bridge pattern anyone's tested?</div>
+          <div class="thread-meta">asked by dr_fatima_al · 9 replies · General health informatics</div>
+        </div>
+        <span class="thread-cat research">Research</span>
+      </a>
+    </div>
+
+    <!-- Category cards -->
+    <div class="community-cats">
+      <a class="cat-card" href="https://community.ajcommons.org/c/technical" target="_blank" rel="noopener">
+        <span class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+        <div class="cat-name">Technical Q&amp;A</div>
+        <div class="cat-desc">Deploy, configure, debug, integrate. Ask anything about AJ Commons components.</div>
+      </a>
+      <a class="cat-card" href="https://community.ajcommons.org/c/deployments" target="_blank" rel="noopener">
+        <span class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></span>
+        <div class="cat-name">Country deployments</div>
+        <div class="cat-desc">India, Kenya, Sri Lanka, Bangladesh and beyond — share what you've built.</div>
+      </a>
+      <a class="cat-card" href="https://community.ajcommons.org/c/research" target="_blank" rel="noopener">
+        <span class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+        <div class="cat-name">Research &amp; policy</div>
+        <div class="cat-desc">FHIR, IHE, SNOMED, openEHR, DPG. Standards discussion and health informatics research.</div>
+      </a>
+      <a class="cat-card" href="https://community.ajcommons.org/c/show-and-tell" target="_blank" rel="noopener">
+        <span class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M12 6v6M9 15h6"/></svg></span>
+        <div class="cat-name">Show &amp; tell</div>
+        <div class="cat-desc">Going live? Share your deployment story, screenshots, and lessons learned.</div>
+      </a>
+      <a class="cat-card" href="https://community.ajcommons.org/c/governance" target="_blank" rel="noopener">
+        <span class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M3 15l9 6 9-6"/></svg></span>
+        <div class="cat-name">Governance</div>
+        <div class="cat-desc">Foundation direction, roadmap voting, DPG compliance, and open decisions.</div>
+      </a>
+      <a class="cat-card" href="https://community.ajcommons.org/c/helpdesk" target="_blank" rel="noopener">
+        <span class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+        <div class="cat-name">General health informatics</div>
+        <div class="cat-desc">HL7, DICOM, EMR/EHR, HIE patterns, national health programmes — open discussion.</div>
+      </a>
+      <a class="cat-card" href="https://community.ajcommons.org/c/announcements" target="_blank" rel="noopener">
+        <span class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg></span>
+        <div class="cat-name">Announcements</div>
+        <div class="cat-desc">Release notes, new components, events, and DPG application updates.</div>
+      </a>
+      <a class="cat-card" href="https://community.ajcommons.org/c/ideas" target="_blank" rel="noopener">
+        <span class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/></svg></span>
+        <div class="cat-name">Ideas &amp; roadmap</div>
+        <div class="cat-desc">Feature requests, component proposals. Upvote what matters to your context.</div>
+      </a>
+    </div>
+
+    <!-- Community stats -->
+    <div class="community-stats">
+      <div class="comm-stat">
+        <span class="comm-stat-n">community.ajcommons.org</span>
+        <span class="comm-stat-l">Forum address · launching soon</span>
+      </div>
+      <div class="comm-stat">
+        <span class="comm-stat-n">8</span>
+        <span class="comm-stat-l">Discussion categories</span>
+      </div>
+      <div class="comm-stat">
+        <span class="comm-stat-n">No GitHub needed</span>
+        <span class="comm-stat-l">Email signup · open to everyone</span>
+      </div>
+      <div class="comm-stat">
+        <span class="comm-stat-n">Code of Conduct</span>
+        <span class="comm-stat-l">Contributor Covenant v2.1</span>
+      </div>
+    </div>
+
   </div>
-</div>
+</section>
 
 <!-- ── DPG ────────────────────────────────────────── -->
 <div id="dpg" class="dpg-bg">
@@ -2363,7 +2563,10 @@ footer {
   </section>
 </div>
 
-<!-- ── CONTACT ────────────────────────────────────── -->
+
+
+
+<!-- ── CONTACT ──────────────────────────────────────── -->
 <section id="contact" class="section">
   <div class="section-eyebrow">Get in touch</div>
   <h2 class="section-title">We'd like to hear from you</h2>
@@ -2413,6 +2616,7 @@ footer {
   </div>
 </section>
 
+<!-- ── FOOTER ───────────────────────────────────────── -->
 <!-- ── FOOTER ─────────────────────────────────────── -->
 <footer>
   <div class="footer-inner">
@@ -2460,7 +2664,7 @@ footer {
       <ul>
         <li><a href="https://docs.ajcommons.org">Technical documentation</a></li>
         <li><a href="https://github.com/ajcommons">GitHub organisation</a></li>
-        <li><a href="https://github.com/ajcommons/aj-commons/discussions">Community discussions</a></li>
+        <li><a href="https://community.ajcommons.org" target="_blank">Community forum ↗</a></li>
         <li><a href="#dpg">DPG status page</a></li>
         <li><a href="#governance">Governance</a></li>
         <li><a href="https://platform.akhester.com">Commercial platform ↗</a></li>
@@ -2492,7 +2696,7 @@ footer {
 <script>
 (function () {
   // Map section IDs to nav link hrefs
-  const sections = ['about','projects','governance','dpg','contact'];
+  const sections = ['about','projects','governance','community','dpg','contact'];
   const navLinks = {};
   sections.forEach(id => {
     const el = document.querySelector('.nav-links a[href="#' + id + '"]');
