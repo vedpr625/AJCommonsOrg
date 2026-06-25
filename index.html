@@ -336,6 +336,21 @@ ul { list-style: none; }
   transition: color 0.15s;
 }
 .nav-links a:hover { color: var(--green); }
+.nav-links a.nav-active {
+  color: var(--green);
+  font-weight: 600;
+  position: relative;
+}
+.nav-links a.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--green);
+  border-radius: 1px;
+}
 .nav-links .nav-gh {
   display: flex;
   align-items: center;
@@ -2474,5 +2489,54 @@ footer {
   </div>
 </footer>
 
+<script>
+(function () {
+  // Map section IDs to nav link hrefs
+  const sections = ['about','projects','governance','dpg','contact'];
+  const navLinks = {};
+  sections.forEach(id => {
+    const el = document.querySelector('.nav-links a[href="#' + id + '"]');
+    if (el) navLinks[id] = el;
+  });
+
+  let current = '';
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        if (navLinks[id]) {
+          if (current && navLinks[current]) navLinks[current].classList.remove('nav-active');
+          navLinks[id].classList.add('nav-active');
+          current = id;
+        }
+      }
+    });
+  }, {
+    rootMargin: '-10% 0px -80% 0px',  // triggers when section top is in upper 20% of viewport
+    threshold: 0
+  });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+
+  // Also handle click — immediately mark as active
+  Object.entries(navLinks).forEach(([id, link]) => {
+    link.addEventListener('click', () => {
+      if (current && navLinks[current]) navLinks[current].classList.remove('nav-active');
+      link.classList.add('nav-active');
+      current = id;
+    });
+  });
+
+  // Mark first section active on load if at top
+  if (window.scrollY < 100 && navLinks['about']) {
+    navLinks['about'].classList.add('nav-active');
+    current = 'about';
+  }
+})();
+</script>
 </body>
 </html>
